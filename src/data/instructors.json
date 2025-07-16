@@ -1,0 +1,134 @@
+[
+  {
+    "id": "GV001",
+    "fullname": "Nguyễn Văn An",
+    "avatar": "https://i.ibb.co/L5hYx4D/avatar-a.jpg",
+    "bio_snippet": "Kỹ sư phần mềm cao cấp với 10 năm kinh nghiệm trong phát triển Web."
+  },
+  {
+    "id": "GV002",
+    "fullname": "Trần Thị Bánh",
+    "avatar": "https://i.ibb.co/S7q0k2v/avatar-b.jpg",
+    "bio_snippet": "Chuyên gia thiết kế đồ họa với hơn 8 năm kinh nghiệm thực chiến."
+  },
+  {
+    "id": "GV003",
+    "fullname": "Ms. Lan Anh",
+    "avatar": "https://i.ibb.co/2g5f3mR/avatar-lananh.jpg",
+    "bio_snippet": "Giảng viên với hơn 15 năm kinh nghiệm dạy tiếng Anh cho người lớn."
+  },
+  {
+    "id": "GV004",
+    "fullname": "Lê Thành Đạt",
+    "avatar": "https://i.ibb.co/zX5jW2z/avatar-dat.jpg",
+    "bio_snippet": "Data Scientist tại tập đoàn công nghệ hàng đầu."
+  },
+  {
+    "id": "GV005",
+    "fullname": "Phan Việt Cường",
+    "avatar": "https://i.ibb.co/D7N8S9z/avatar-cuong-p.jpg",
+    "bio_snippet": "Đạo diễn và editor chuyên nghiệp với các dự án lớn."
+  },
+  {
+    "id": "GV006",
+    "fullname": "Ngô Thanh Tâm",
+    "avatar": "https://i.ibb.co/L5hYx4D/avatar-a.jpg",
+    "bio_snippet": "Chuyên gia UI/UX với 7 năm kinh nghiệm tại các Startup công nghệ."
+  },
+  {
+    "id": "GV007",
+    "fullname": "Đặng Minh Tâm",
+    "avatar": "https://i.ibb.co/S7q0k2v/avatar-b.jpg",
+    "bio_snippet": "Chuyên gia Google Ads với chứng nhận Google Partner."
+  },
+  {
+    "id": "GV008",
+    "fullname": "Hoàng Thị Mai",
+    "avatar": "https://i.ibb.co/K2sYQ1L/avatar-linh.jpg",
+    "bio_snippet": "Chuyên gia đào tạo Excel và ứng dụng văn phòng."
+  },
+  {
+    "id": "GV009",
+    "fullname": "Cô giáo Huyền",
+    "avatar": "https://i.ibb.co/Z1QyK2V/avatar-thuy.jpg",
+    "bio_snippet": "Giảng viên Yoga được chứng nhận quốc tế, 10 năm kinh nghiệm."
+  },
+  {
+    "id": "GV010",
+    "fullname": "Mr. Tùng",
+    "avatar": "https://i.ibb.co/jDyH2jR/avatar-minh.jpg",
+    "bio_snippet": "Nhạc sĩ và giảng viên guitar với hơn 10 năm kinh nghiệm."
+  },
+  {
+    "id": "GV011",
+    "fullname": "Đặng Hoàng Giang",
+    "avatar": "https://i.ibb.co/zX5jW2z/avatar-dat.jpg",
+    "bio_snippet": "Kiến trúc sư nội thất với các dự án căn hộ và biệt thự cao cấp."
+  },
+  {
+    "id": "GV012",
+    "fullname": "Nguyễn Mai Phương",
+    "avatar": "https://i.ibb.co/S7q0k2v/avatar-b.jpg",
+    "bio_snippet": "Chuyên gia đào tạo kỹ năng mềm và diễn giả truyền cảm hứng."
+  },
+  {
+    "id": "GV013",
+    "fullname": "Đầu bếp Long",
+    "avatar": "https://i.ibb.co/3k5f72S/avatar-cuong.jpg",
+    "bio_snippet": "Đầu bếp chuyên nghiệp với kinh nghiệm lâu năm trong các nhà hàng."
+  },
+  {
+    "id": "GV014",
+    "fullname": "Ông Phạm Quang",
+    "avatar": "https://i.ibb.co/L5hYx4D/avatar-a.jpg",
+    "bio_snippet": "Chuyên gia tài chính với 20 năm kinh nghiệm trên thị trường chứng khoán."
+  },
+  {
+    "id": "GV015",
+    "fullname": "Chuyên gia Thùy Dung",
+    "avatar": "https://i.ibb.co/Z1QyK2V/avatar-thuy.jpg",
+    "bio_snippet": "Chuyên gia trang điểm và stylist nổi tiếng."
+  },
+  {
+    "id": "GV016",
+    "fullname": "Tiến sĩ Tâm Lý Nguyễn Thị C",
+    "avatar": "https://i.ibb.co/2g5f3mR/avatar-lananh.jpg",
+    "bio_snippet": "Chuyên gia tâm lý học, tác giả nhiều cuốn sách về hạnh phúc."
+  },
+  {
+    "id": "GV017",
+    "fullname": "Cô giáo Hà",
+    "avatar": "https://i.ibb.co/Z1QyK2V/avatar-thuy.jpg",
+    "bio_snippet": "Giảng viên tiếng Trung với nhiều năm kinh nghiệm."
+  },
+  {
+    "id": "GV018",
+    "fullname": "Hoàng Nam",
+    "avatar": "https://i.ibb.co/yY5t0mR/avatar-huy.jpg",
+    "bio_snippet": "PMO tại tập đoàn công nghệ lớn, có chứng chỉ PMP và CSM."
+  },
+  {
+    "id": "GV019",
+    "fullname": "Nhiếp ảnh gia Tú",
+    "avatar": "https://i.ibb.co/D7N8S9z/avatar-cuong-p.jpg",
+    "bio_snippet": "Nhiếp ảnh gia chuyên nghiệp với nhiều giải thưởng."
+  },
+  {
+    "id": "GV020",
+    "fullname": "Chuyên gia Dinh dưỡng Hằng",
+    "avatar": "https://i.ibb.co/L5hYx4D/avatar-a.jpg",
+    "bio_snippet": "Chuyên gia dinh dưỡng lâm sàng, có kinh nghiệm tư vấn cho hàng nghìn người."
+  },
+  {
+    "id": "GV021",
+    "fullname": "Trần Anh Tú",
+    "avatar": "https://i.ibb.co/K2sYQ1L/avatar-linh.jpg",
+    "bio_snippet": "Game Developer với nhiều tựa game được phát hành."
+  },
+  {
+    "id": "GV022",
+    "fullname": "Họa sĩ Minh Châu",
+    "avatar": "https://i.ibb.co/9G4W0Qy/avatar-hoa.jpg",
+    "bio_snippet": "Họa sĩ truyện tranh độc lập, có nhiều tác phẩm được yêu thích."
+  }
+]

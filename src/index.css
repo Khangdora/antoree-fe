@@ -1,0 +1,557 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+}
+
+@variant dark (.dark &);
+
+/* Custom animations cho Header */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* Search input mobile animation */
+.search-input-mobile {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-input-mobile:focus {
+  animation: searchFocusExpand 0.3s ease-out forwards;
+}
+
+@keyframes searchFocusExpand {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Mobile responsive search animation */
+@media (max-width: 768px) {
+  .search-input-mobile:focus {
+    animation: searchExpandMobile 0.3s ease-out forwards;
+  }
+  
+  @keyframes searchExpandMobile {
+    0% {
+      transform: scale(1);
+      width: 100%;
+    }
+    100% {
+      transform: scale(1.02);
+      width: 120%;
+      margin-left: -10%;
+    }
+  }
+}
+
+/* Backdrop blur cho dropdowns */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar cho dropdowns */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Line clamp cho text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mega menu styles */
+.mega-menu {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 1200px;
+}
+
+/* Custom styles for course platform */
+.course-card {
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animate in classes */
+.animate-in {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Course category badges */
+.category-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Rating stars */
+.rating-stars {
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+/* Course price styling */
+.price-original {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.price-discount {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* Search highlight */
+.search-highlight {
+  background-color: #fef3c7;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Course level indicators */
+.level-beginner {
+  background-color: #10b981;
+  color: white;
+}
+
+.level-intermediate {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.level-advanced {
+  background-color: #ef4444;
+  color: white;
+}
+
+.level-all {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* Hero section gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Course feature highlights */
+.feature-highlight {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.feature-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .course-card {
+    margin-bottom: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+/* Dark mode enhancements */
+.dark .feature-highlight {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-color: rgba(102, 126, 234, 0.1);
+}
+
+.dark .search-highlight {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+/* Dropdown animations */
+.animate-in {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-top-1 {
+  animation-name: slideInFromTop;
+  animation-duration: 150ms;
+}
+
+.slide-in-from-top-2 {
+  animation-name: slideInFromTop;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-right {
+  animation-name: slideInFromRight;
+}
+
+.animate-slideInFromTop {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.2s ease-out;
+}
+
+.scale-in {
+  animation-name: scaleIn;
+}
+
+.bounce-in {
+  animation-name: bounceIn;
+}
+
+/* Loading shimmer effect */
+.shimmer {
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 800px 104px;
+  animation: shimmer 1s linear infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(to right, #374151 0%, #4b5563 20%, #374151 40%, #374151 100%);
+  background-size: 800px 104px;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Theme toggle animation */
+/* Custom scrollbar for dropdown */
+.mega-menu-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mega-menu-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.mega-menu-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.mega-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #5a67d8, #6b46c1);
+}
+
+.dark .mega-menu-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark .mega-menu-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4c51bf, #553c9a);
+}
+
+.dark .mega-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+/* Category card animations */
+.category-card-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.category-card-main:hover::before {
+  left: 100%;
+}
+
+/* Animate in for grid items */
+.animate-in {
+  animation: slideInUp 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filter button animations */
+.filter-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.3s;
+}
+
+.filter-button:hover::before {
+  left: 100%;
+}
+
+.theme-toggle-sun {
+  animation: rotate360 0.5s ease-in-out;
+}
+
+.theme-toggle-moon {
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "mainCategories": [
+    {
+      "id": "web-development",
+      "name": "Phát triển Web",
+      "icon": "💻",
+      "description": "Học lập trình web từ cơ bản đến nâng cao",
+      "color": "from-blue-500 to-cyan-500",
+      "featured": true,
+      "subcategories": ["Frontend", "Backend", "Full Stack", "React", "Vue", "Angular", "Node.js"]
+    },
+    {
+      "id": "design",
+      "name": "Thiết kế đồ họa",
+      "icon": "🎨",
+      "description": "Thiết kế UI/UX, graphic design chuyên nghiệp",
+      "color": "from-pink-500 to-purple-500",
+      "featured": true,
+      "subcategories": ["UI/UX Design", "Graphic Design", "Photoshop", "Illustrator", "Figma"]
+    },
+    {
+      "id": "data-science",
+      "name": "Khoa học Dữ liệu",
+      "icon": "📊",
+      "description": "Phân tích dữ liệu, machine learning, AI",
+      "color": "from-green-500 to-teal-500",
+      "featured": true,
+      "subcategories": ["Python", "Machine Learning", "Data Analysis", "Statistics", "AI"]
+    },
+    {
+      "id": "business",
+      "name": "Kinh doanh",
+      "icon": "💼",
+      "description": "Quản trị kinh doanh, marketing, khởi nghiệp",
+      "color": "from-orange-500 to-yellow-500",
+      "featured": true,
+      "subcategories": ["Marketing", "Management", "Entrepreneurship", "Finance", "Sales"]
+    },
+    {
+      "id": "languages",
+      "name": "Ngoại ngữ",
+      "icon": "🌍",
+      "description": "Học ngoại ngữ hiệu quả với phương pháp hiện đại",
+      "color": "from-indigo-500 to-blue-500",
+      "featured": true,
+      "subcategories": ["English", "Chinese", "Japanese", "Korean", "French"]
+    },
+    {
+      "id": "video-production",
+      "name": "Sản xuất video",
+      "icon": "🎬",
+      "description": "Quay phim, dựng phim, motion graphics",
+      "color": "from-red-500 to-pink-500",
+      "featured": true,
+      "subcategories": ["Video Editing", "Motion Graphics", "Cinematography", "After Effects"]
+    },
+    {
+      "id": "photography",
+      "name": "Nhiếp ảnh",
+      "icon": "📷",
+      "description": "Kỹ thuật chụp ảnh và chỉnh sửa ảnh chuyên nghiệp",
+      "color": "from-purple-500 to-indigo-500",
+      "featured": true,
+      "subcategories": ["Portrait", "Landscape", "Wedding", "Commercial", "Photo Editing"]
+    },
+    {
+      "id": "personal-development",
+      "name": "Phát triển bản thân",
+      "icon": "🚀",
+      "description": "Kỹ năng mềm, lãnh đạo, giao tiếp",
+      "color": "from-teal-500 to-green-500",
+      "featured": true,
+      "subcategories": ["Leadership", "Communication", "Time Management", "Productivity"]
+    }
+  ],
+  "allCategories": [
+    {
+      "id": "web-development",
+      "name": "Phát triển Web",
+      "icon": "💻",
+      "description": "Học lập trình web từ cơ bản đến nâng cao",
+      "color": "from-blue-500 to-cyan-500"
+    },
+    {
+      "id": "design",
+      "name": "Thiết kế đồ họa",
+      "icon": "🎨",
+      "description": "Thiết kế UI/UX, graphic design chuyên nghiệp",
+      "color": "from-pink-500 to-purple-500"
+    },
+    {
+      "id": "languages",
+      "name": "Ngoại ngữ",
+      "icon": "🌍",
+      "description": "Học ngoại ngữ hiệu quả với phương pháp hiện đại",
+      "color": "from-indigo-500 to-blue-500"
+    },
+    {
+      "id": "data-science",
+      "name": "Khoa học Dữ liệu",
+      "icon": "📊",
+      "description": "Phân tích dữ liệu, machine learning, AI",
+      "color": "from-green-500 to-teal-500"
+    },
+    {
+      "id": "video-production",
+      "name": "Sản xuất video",
+      "icon": "🎬",
+      "description": "Quay phim, dựng phim, motion graphics",
+      "color": "from-red-500 to-pink-500"
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "icon": "📢",
+      "description": "Digital marketing, SEO, social media",
+      "color": "from-yellow-500 to-orange-500"
+    },
+    {
+      "id": "office-skills",
+      "name": "Tin học văn phòng",
+      "icon": "📋",
+      "description": "Excel, Word, PowerPoint chuyên nghiệp",
+      "color": "from-gray-500 to-slate-500"
+    },
+    {
+      "id": "business",
+      "name": "Kinh doanh",
+      "icon": "💼",
+      "description": "Quản trị kinh doanh, marketing, khởi nghiệp",
+      "color": "from-orange-500 to-yellow-500"
+    },
+    {
+      "id": "personal-development",
+      "name": "Phát triển bản thân",
+      "icon": "🚀",
+      "description": "Kỹ năng mềm, lãnh đạo, giao tiếp",
+      "color": "from-teal-500 to-green-500"
+    },
+    {
+      "id": "health-lifestyle",
+      "name": "Sức khỏe & Phong cách sống",
+      "icon": "🧘",
+      "description": "Yoga, fitness, dinh dưỡng, sức khỏe tinh thần",
+      "color": "from-emerald-500 to-teal-500"
+    },
+    {
+      "id": "photography",
+      "name": "Nhiếp ảnh",
+      "icon": "📷",
+      "description": "Kỹ thuật chụp ảnh và chỉnh sửa ảnh chuyên nghiệp",
+      "color": "from-purple-500 to-indigo-500"
+    },
+    {
+      "id": "game-development",
+      "name": "Phát triển Game",
+      "icon": "🎮",
+      "description": "Lập trình game, thiết kế game, Unity, Unreal",
+      "color": "from-violet-500 to-purple-500"
+    },
+    {
+      "id": "music-arts",
+      "name": "Nghệ thuật & Âm nhạc",
+      "icon": "🎵",
+      "description": "Sáng tác nhạc, chơi nhạc cụ, nghệ thuật",
+      "color": "from-rose-500 to-pink-500"
+    }
+  ]
+}

@@ -1,0 +1,1377 @@
+[
+  {
+    "id": "KH001",
+    "title": "Lập Trình Web Front-end với ReactJS & Redux",
+    "slug": "lap-trinh-web-front-end-reactjs-redux",
+    "category": "Phát triển Web",
+    "sub_category": "Front-end Development",
+    "level": "Trung cấp",
+    "instructor_id": "GV001",
+    "price": 1200000,
+    "currency": "VND",
+    "discount_price": 990000,
+    "description": "Học cách xây dựng các ứng dụng web động và hiệu suất cao với ReactJS, Redux và các công nghệ Front-end hiện đại khác.",
+    "learning_outcomes": [
+      "Thành thạo ReactJS và các Hook",
+      "Quản lý State với Redux Toolkit",
+      "Xây dựng API RESTful với Node.js",
+      "Triển khai ứng dụng lên Cloud"
+    ],
+    "what_you_will_learn": [
+      "Kiến thức chuyên sâu về Javascript ES6+",
+      "Cách dùng JSX, Component và Props",
+      "Sử dụng React Router để điều hướng",
+      "Tối ưu hiệu suất ứng dụng React"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về HTML, CSS, JavaScript",
+      "Máy tính có kết nối Internet"
+    ],
+    "duration_hours": 45,
+    "number_of_lectures": 120,
+    "rating": 4.8,
+    "number_of_reviews": 850,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/h7g4P8G/react-redux-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-20",
+    "related_topics": [
+      "JavaScript",
+      "Node.js",
+      "Front-end",
+      "Web Development",
+      "State Management"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH002",
+    "title": "Thiết Kế Đồ Họa Chuyên Nghiệp với Adobe Photoshop & Illustrator",
+    "slug": "thiet-ke-do-hoa-chuyen-nghiep-photoshop-illustrator",
+    "category": "Thiết kế đồ họa",
+    "sub_category": "Đồ họa 2D",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV002",
+    "price": 950000,
+    "currency": "VND",
+    "discount_price": 750000,
+    "description": "Làm chủ các công cụ Adobe Photoshop và Illustrator để tạo ra những tác phẩm đồ họa ấn tượng từ cơ bản đến nâng cao.",
+    "learning_outcomes": [
+      "Sử dụng thành thạo Photoshop và Illustrator",
+      "Thiết kế logo, banner, brochure chuyên nghiệp",
+      "Hiểu về nguyên lý màu sắc và bố cục",
+      "Tối ưu hình ảnh cho Web và in ấn"
+    ],
+    "what_you_will_learn": [
+      "Các công cụ và tính năng cơ bản của Photoshop",
+      "Vẽ vector và tạo icon với Illustrator",
+      "Kỹ thuật blend màu và retouch ảnh",
+      "Tạo hiệu ứng chữ và đồ họa 3D đơn giản"
+    ],
+    "requirements": [
+      "Máy tính cài đặt Adobe Photoshop và Illustrator",
+      "Sự đam mê với thiết kế"
+    ],
+    "duration_hours": 30,
+    "number_of_lectures": 90,
+    "rating": 4.7,
+    "number_of_reviews": 620,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/P9t2m2M/photoshop-illustrator-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-01",
+    "related_topics": [
+      "UI/UX Design",
+      "Branding",
+      "Digital Art",
+      "Creative Design"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH003",
+    "title": "Tiếng Anh Giao Tiếp Thực Chiến cho Người Mất Gốc",
+    "slug": "tieng-anh-giao-tiep-thuc-chien-nguoi-mat-goc",
+    "category": "Ngoại ngữ",
+    "sub_category": "Tiếng Anh",
+    "level": "Cơ bản",
+    "instructor_id": "GV003",
+    "price": 800000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học tập trung vào luyện nghe, nói, phát âm chuẩn và các cấu trúc câu thông dụng để tự tin giao tiếp hàng ngày.",
+    "learning_outcomes": [
+      "Giao tiếp cơ bản các chủ đề hàng ngày",
+      "Phát âm chuẩn và ngữ điệu tự nhiên",
+      "Xây dựng vốn từ vựng thông dụng",
+      "Nghe hiểu các đoạn hội thoại đơn giản"
+    ],
+    "what_you_will_learn": [
+      "Các thì cơ bản trong tiếng Anh",
+      "Cấu trúc câu thông dụng và thành ngữ",
+      "Kỹ năng nghe nói phản xạ",
+      "Thực hành giao tiếp qua các tình huống"
+    ],
+    "requirements": [
+      "Sự kiên trì và ham học hỏi",
+      "Có micro để luyện nói"
+    ],
+    "duration_hours": 40,
+    "number_of_lectures": 100,
+    "rating": 4.9,
+    "number_of_reviews": 1100,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/Wc6Y0j2/english-communication-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-15",
+    "related_topics": [
+      "IELTS",
+      "TOEFL",
+      "Ngữ pháp tiếng Anh",
+      "Luyện thi"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH004",
+    "title": "Phân Tích Dữ Liệu với Python và Thư Viện Pandas",
+    "slug": "phan-tich-du-lieu-python-pandas",
+    "category": "Khoa học Dữ liệu",
+    "sub_category": "Phân tích dữ liệu",
+    "level": "Cơ bản",
+    "instructor_id": "GV004",
+    "price": 1500000,
+    "currency": "VND",
+    "discount_price": 1200000,
+    "description": "Học cách thu thập, làm sạch, biến đổi và phân tích dữ liệu bằng Python và thư viện Pandas mạnh mẽ.",
+    "learning_outcomes": [
+      "Thao tác dữ liệu với Pandas DataFrames",
+      "Làm sạch và tiền xử lý dữ liệu",
+      "Trực quan hóa dữ liệu cơ bản với Matplotlib",
+      "Áp dụng phân tích dữ liệu vào bài toán thực tế"
+    ],
+    "what_you_will_learn": [
+      "Cài đặt môi trường Python cho Data Science",
+      "Giới thiệu về Numpy và Pandas",
+      "Xử lý dữ liệu bị thiếu và ngoại lệ",
+      "Tạo biểu đồ và báo cáo dữ liệu"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về lập trình (ưu tiên Python)",
+      "Máy tính có khả năng cài đặt Python"
+    ],
+    "duration_hours": 35,
+    "number_of_lectures": 80,
+    "rating": 4.6,
+    "number_of_reviews": 580,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/5F8B2G5/python-pandas-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-08",
+    "related_topics": [
+      "Machine Learning",
+      "Big Data",
+      "SQL",
+      "Thống kê"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH005",
+    "title": "Toàn Tập Quay Dựng Video với Adobe Premiere Pro",
+    "slug": "toan-tap-quay-dung-video-adobe-premiere-pro",
+    "category": "Sản xuất video",
+    "sub_category": "Chỉnh sửa video",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV005",
+    "price": 1000000,
+    "currency": "VND",
+    "discount_price": 790000,
+    "description": "Nắm vững kỹ năng quay phim, chỉnh sửa và dựng video chuyên nghiệp bằng Adobe Premiere Pro từ A-Z.",
+    "learning_outcomes": [
+      "Sử dụng thành thạo Premiere Pro",
+      "Kỹ thuật dựng phim, cắt ghép, chuyển cảnh",
+      "Chỉnh màu và âm thanh cho video",
+      "Xuất bản video chất lượng cao"
+    ],
+    "what_you_will_learn": [
+      "Hiểu về quy trình sản xuất video",
+      "Cách dùng các công cụ cơ bản và nâng cao",
+      "Tạo hiệu ứng và tiêu đề động",
+      "Tối ưu hóa video cho YouTube và mạng xã hội"
+    ],
+    "requirements": [
+      "Máy tính cấu hình đủ mạnh để chạy Premiere Pro",
+      "Sự sáng tạo và kiên nhẫn"
+    ],
+    "duration_hours": 28,
+    "number_of_lectures": 75,
+    "rating": 4.7,
+    "number_of_reviews": 700,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/hR9cR02/premiere-pro-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-25",
+    "related_topics": [
+      "After Effects",
+      "Motion Graphics",
+      "YouTube Marketing",
+      "Photography"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH006",
+    "title": "Thiết Kế Giao Diện Người Dùng (UI) và Trải Nghiệm Người Dùng (UX) với Figma",
+    "slug": "thiet-ke-giao-dien-nguoi-dung-ui-ux-figma",
+    "category": "Thiết kế",
+    "sub_category": "UI/UX Design",
+    "level": "Cơ bản",
+    "instructor_id": "GV006",
+    "price": 1100000,
+    "currency": "VND",
+    "discount_price": 890000,
+    "description": "Học cách thiết kế giao diện và trải nghiệm người dùng tuyệt vời cho ứng dụng web và di động bằng Figma.",
+    "learning_outcomes": [
+      "Nắm vững các nguyên tắc UI/UX",
+      "Thiết kế Wireframe, Mockup, Prototype",
+      "Sử dụng Figma thành thạo",
+      "Tạo Design System"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu về UI/UX",
+      "Nghiên cứu người dùng và tạo Persona",
+      "Thiết kế Responsive Design",
+      "Thực hành với các dự án thực tế"
+    ],
+    "requirements": [
+      "Sự quan tâm đến thiết kế sản phẩm số",
+      "Máy tính có kết nối Internet"
+    ],
+    "duration_hours": 32,
+    "number_of_lectures": 85,
+    "rating": 4.8,
+    "number_of_reviews": 750,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/7C9B1D5/ui-ux-figma-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-29",
+    "related_topics": [
+      "Web Design",
+      "Mobile App Design",
+      "User Research",
+      "Prototyping"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH007",
+    "title": "Khóa học Google Ads Từ A-Z: Tối Ưu Chiến Dịch Quảng Cáo",
+    "slug": "khoa-hoc-google-ads-tu-a-z-toi-uu-chien-dich-quang-cao",
+    "category": "Marketing",
+    "sub_category": "Digital Marketing",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV007",
+    "price": 850000,
+    "currency": "VND",
+    "discount_price": 650000,
+    "description": "Làm chủ Google Ads để tạo, quản lý và tối ưu các chiến dịch quảng cáo hiệu quả, tăng doanh thu.",
+    "learning_outcomes": [
+      "Thiết lập tài khoản Google Ads",
+      "Nghiên cứu từ khóa hiệu quả",
+      "Tối ưu hóa điểm chất lượng và CPC",
+      "Phân tích báo cáo và điều chỉnh chiến dịch"
+    ],
+    "what_you_will_learn": [
+      "Các loại hình quảng cáo Google Ads",
+      "Cách viết mẫu quảng cáo hấp dẫn",
+      "Đo lường và theo dõi hiệu suất",
+      "Các chiến lược đấu thầu thông minh"
+    ],
+    "requirements": [
+      "Có máy tính và kết nối internet",
+      "Sự kiên trì và ham học hỏi"
+    ],
+    "duration_hours": 20,
+    "number_of_lectures": 60,
+    "rating": 4.6,
+    "number_of_reviews": 450,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/J9m5gW0/google-ads-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-03",
+    "related_topics": [
+      "Facebook Ads",
+      "SEO",
+      "Content Marketing",
+      "Affiliate Marketing"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH008",
+    "title": "Học Excel Từ Cơ Bản Đến Nâng Cao cho Dân Văn Phòng",
+    "slug": "hoc-excel-tu-co-ban-den-nang-cao-cho-dan-van-phong",
+    "category": "Tin học văn phòng",
+    "sub_category": "Microsoft Office",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV008",
+    "price": 600000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Nắm vững mọi kỹ năng Excel từ cơ bản đến các hàm phức tạp, giúp bạn xử lý công việc nhanh chóng và hiệu quả.",
+    "learning_outcomes": [
+      "Thành thạo các hàm Excel cơ bản và nâng cao",
+      "Tạo báo cáo và biểu đồ chuyên nghiệp",
+      "Sử dụng PivotTable và Power Query",
+      "Tự động hóa tác vụ với VBA cơ bản"
+    ],
+    "what_you_will_learn": [
+      "Giao diện và các thao tác cơ bản",
+      "Hàm logic, lookup, text, date/time",
+      "Định dạng có điều kiện và bảo mật sheet",
+      "Phân tích dữ liệu với các công cụ Excel"
+    ],
+    "requirements": [
+      "Máy tính cài đặt Microsoft Excel",
+      "Sự tập trung và luyện tập"
+    ],
+    "duration_hours": 25,
+    "number_of_lectures": 70,
+    "rating": 4.9,
+    "number_of_reviews": 980,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/Q8Q2C9v/excel-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-10",
+    "related_topics": [
+      "Word",
+      "PowerPoint",
+      "Google Sheets",
+      "VBA"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH009",
+    "title": "Yoga Từ Cơ Bản Đến Nâng Cao: Sức Khỏe & Thư Giãn",
+    "slug": "yoga-tu-co-ban-den-nang-cao-suc-khoe-thu-gian",
+    "category": "Sức khỏe & Phong cách sống",
+    "sub_category": "Yoga & Thiền",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV009",
+    "price": 450000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học Yoga toàn diện giúp bạn cải thiện sức khỏe, tăng cường sự linh hoạt và tìm thấy sự bình yên trong tâm hồn.",
+    "learning_outcomes": [
+      "Thực hiện các tư thế Yoga đúng kỹ thuật",
+      "Cải thiện độ linh hoạt và sức mạnh",
+      "Giảm căng thẳng và cải thiện giấc ngủ",
+      "Tìm thấy sự cân bằng trong cuộc sống"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu về Yoga và các trường phái",
+      "Bài tập khởi động và làm nóng cơ thể",
+      "Các tư thế cơ bản và nâng cao",
+      "Kỹ thuật hít thở và thiền định"
+    ],
+    "requirements": [
+      "Thảm Yoga",
+      "Không gian yên tĩnh để luyện tập"
+    ],
+    "duration_hours": 15,
+    "number_of_lectures": 40,
+    "rating": 4.9,
+    "number_of_reviews": 890,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/k5C2C4d/yoga-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-01",
+    "related_topics": [
+      "Thiền",
+      "Fitness",
+      "Sống lành mạnh",
+      "Dinh dưỡng"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH010",
+    "title": "Học Đàn Guitar Cấp Tốc: Từ Số 0 Đến Biết Chơi Cơ Bản",
+    "slug": "hoc-dan-guitar-cap-toc-tu-so-0-den-biet-choi-co-ban",
+    "category": "Nghệ thuật & Âm nhạc",
+    "sub_category": "Nhạc cụ",
+    "level": "Cơ bản",
+    "instructor_id": "GV010",
+    "price": 700000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học được thiết kế đặc biệt cho người mới bắt đầu, giúp bạn nhanh chóng chơi được các hợp âm và bài hát yêu thích.",
+    "learning_outcomes": [
+      "Nắm vững các hợp âm cơ bản",
+      "Đệm hát các bài hát phổ biến",
+      "Hiểu về nhịp điệu và tiết tấu",
+      "Tự tin chơi guitar giải trí"
+    ],
+    "what_you_will_learn": [
+      "Cấu tạo đàn guitar và cách cầm đàn",
+      "Luyện ngón và làm quen với phím đàn",
+      "Các điệu đệm hát cơ bản (slowrock, disco...)",
+      "Đọc tab và sheet nhạc đơn giản"
+    ],
+    "requirements": [
+      "Một cây đàn guitar (acoustic hoặc classic)",
+      "Sự kiên trì và đam mê âm nhạc"
+    ],
+    "duration_hours": 20,
+    "number_of_lectures": 50,
+    "rating": 4.7,
+    "number_of_reviews": 550,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/wJ1F9C9/guitar-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-07",
+    "related_topics": [
+      "Piano",
+      "Ukulele",
+      "Lý thuyết âm nhạc",
+      "Sáng tác"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH011",
+    "title": "Chinh Phục IELTS 7.0+: Chiến Lược & Luyện Đề Chuyên Sâu",
+    "slug": "chinh-phuc-ielts-7-0-chien-luoc-luyen-de-chuyen-sau",
+    "category": "Ngoại ngữ",
+    "sub_category": "Luyện thi IELTS",
+    "level": "Nâng cao",
+    "instructor_id": "GV003",
+    "price": 2500000,
+    "currency": "VND",
+    "discount_price": 2000000,
+    "description": "Khóa học chuyên sâu dành cho học viên muốn đạt band điểm IELTS 7.0 trở lên, tập trung vào chiến lược làm bài và luyện đề.",
+    "learning_outcomes": [
+      "Nắm vững cấu trúc đề thi IELTS",
+      "Áp dụng các chiến lược làm bài hiệu quả",
+      "Nâng cao kỹ năng Listening, Reading, Writing, Speaking",
+      "Đạt mục tiêu IELTS 7.0+"
+    ],
+    "what_you_will_learn": [
+      "Chiến thuật cho từng dạng bài thi",
+      "Luyện tập với các đề thi thật",
+      "Feedback chi tiết cho phần Writing và Speaking",
+      "Mở rộng vốn từ vựng và ngữ pháp học thuật"
+    ],
+    "requirements": [
+      "Trình độ tiếng Anh từ B2 trở lên",
+      "Sự cam kết và luyện tập đều đặn"
+    ],
+    "duration_hours": 60,
+    "number_of_lectures": 150,
+    "rating": 4.8,
+    "number_of_reviews": 400,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/jR0D6C3/ielts-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-20",
+    "related_topics": [
+      "Tiếng Anh học thuật",
+      "TOEFL",
+      "Business English",
+      "Giao tiếp tiếng Anh"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH012",
+    "title": "Thiết Kế Kiến Trúc Nội Thất với SketchUp & V-Ray",
+    "slug": "thiet-ke-kien-truc-noi-that-sketchup-vray",
+    "category": "Kiến trúc & Xây dựng",
+    "sub_category": "Thiết kế nội thất",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV011",
+    "price": 1800000,
+    "currency": "VND",
+    "discount_price": 1400000,
+    "description": "Học cách thiết kế và dựng hình 3D nội thất chuyên nghiệp, tạo ra hình ảnh render chân thực với SketchUp và V-Ray.",
+    "learning_outcomes": [
+      "Thành thạo SketchUp và V-Ray",
+      "Thiết kế mặt bằng và bố trí nội thất",
+      "Tạo vật liệu và ánh sáng chân thực",
+      "Xuất bản ảnh render chất lượng cao"
+    ],
+    "what_you_will_learn": [
+      "Các công cụ cơ bản của SketchUp",
+      "Tạo khối, model đồ vật nội thất",
+      "Thiết lập V-Ray Render",
+      "Thực hành với dự án thiết kế căn hộ mẫu"
+    ],
+    "requirements": [
+      "Máy tính cấu hình mạnh",
+      "Sự sáng tạo và tư duy không gian"
+    ],
+    "duration_hours": 40,
+    "number_of_lectures": 100,
+    "rating": 4.7,
+    "number_of_reviews": 320,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/m0fW2z0/sketchup-vray-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-09",
+    "related_topics": [
+      "AutoCAD",
+      "Revit",
+      "3D Max",
+      "Thiết kế cảnh quan"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH013",
+    "title": "Kỹ Năng Thuyết Trình Chuyên Nghiệp & Thu Hút",
+    "slug": "ky-nang-thuyet-trinh-chuyen-nghiep-thu-hut",
+    "category": "Kỹ năng mềm",
+    "sub_category": "Giao tiếp",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV012",
+    "price": 750000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Nâng cao kỹ năng thuyết trình, từ xây dựng nội dung đến phong thái trình bày, giúp bạn tự tin tỏa sáng trước đám đông.",
+    "learning_outcomes": [
+      "Xây dựng cấu trúc bài thuyết trình logic",
+      "Sử dụng ngôn ngữ cơ thể hiệu quả",
+      "Tương tác với khán giả",
+      "Xử lý các tình huống bất ngờ khi thuyết trình"
+    ],
+    "what_you_will_learn": [
+      "Các lỗi thường gặp khi thuyết trình",
+      "Kỹ thuật mở đầu và kết thúc ấn tượng",
+      "Thiết kế slide chuyên nghiệp",
+      "Luyện tập thuyết trình thực tế"
+    ],
+    "requirements": [
+      "Sự sẵn lòng luyện tập",
+      "Máy tính có PowerPoint/Google Slides"
+    ],
+    "duration_hours": 10,
+    "number_of_lectures": 30,
+    "rating": 4.8,
+    "number_of_reviews": 600,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/0Xg2R1y/presentation-skills-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-25",
+    "related_topics": [
+      "Giao tiếp hiệu quả",
+      "Tư duy phản biện",
+      "Lãnh đạo",
+      "Quản lý thời gian"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH014",
+    "title": "Nghệ Thuật Nấu Ăn Gia Đình: Từ Cơ Bản Đến Món Ngon Cuối Tuần",
+    "slug": "nghe-thuat-nau-an-gia-dinh-tu-co-ban-den-mon-ngon-cuoi-tuan",
+    "category": "Ẩm thực & Nấu ăn",
+    "sub_category": "Nấu ăn gia đình",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV013",
+    "price": 500000,
+    "currency": "VND",
+    "discount_price": 399000,
+    "description": "Học cách chuẩn bị những bữa ăn ngon, bổ dưỡng và đa dạng cho gia đình, từ các món cơ bản đến món phức tạp hơn cho cuối tuần.",
+    "learning_outcomes": [
+      "Nắm vững kỹ năng sơ chế nguyên liệu",
+      "Chế biến đa dạng món ăn Việt và Á",
+      "Trang trí món ăn đẹp mắt",
+      "Hiểu về an toàn vệ sinh thực phẩm"
+    ],
+    "what_you_will_learn": [
+      "Các loại gia vị và cách sử dụng",
+      "Kỹ thuật nấu canh, kho, xào, nướng",
+      "Món tráng miệng và đồ uống đơn giản",
+      "Mẹo tiết kiệm thời gian khi nấu ăn"
+    ],
+    "requirements": [
+      "Đam mê nấu ăn",
+      "Các dụng cụ nhà bếp cơ bản"
+    ],
+    "duration_hours": 18,
+    "number_of_lectures": 45,
+    "rating": 4.7,
+    "number_of_reviews": 720,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/k2x5F2C/cooking-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-01",
+    "related_topics": [
+      "Làm bánh",
+      "Pha chế đồ uống",
+      "Dinh dưỡng",
+      "Ăn kiêng"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH015",
+    "title": "Đầu Tư Chứng Khoán Cho Người Mới Bắt Đầu: Từ A-Z",
+    "slug": "dau-tu-chung-khoan-cho-nguoi-moi-bat-dau-tu-a-z",
+    "category": "Tài chính & Kinh doanh",
+    "sub_category": "Đầu tư",
+    "level": "Cơ bản",
+    "instructor_id": "GV014",
+    "price": 1300000,
+    "currency": "VND",
+    "discount_price": 1050000,
+    "description": "Khóa học cung cấp kiến thức nền tảng về thị trường chứng khoán, giúp bạn tự tin bắt đầu hành trình đầu tư.",
+    "learning_outcomes": [
+      "Hiểu về các loại hình chứng khoán",
+      "Phân tích cơ bản và phân tích kỹ thuật",
+      "Quản lý rủi ro trong đầu tư",
+      "Xây dựng danh mục đầu tư hiệu quả"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu thị trường chứng khoán",
+      "Cách đọc biểu đồ và tin tức tài chính",
+      "Các chiến lược đầu tư ngắn hạn và dài hạn",
+      "Hướng dẫn mở tài khoản và đặt lệnh"
+    ],
+    "requirements": [
+      "Sự kiên trì và tư duy logic",
+      "Có máy tính và kết nối internet"
+    ],
+    "duration_hours": 22,
+    "number_of_lectures": 55,
+    "rating": 4.7,
+    "number_of_reviews": 480,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/94Q1D2B/stock-investment-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-28",
+    "related_topics": [
+      "Đầu tư bất động sản",
+      "Forex",
+      "Tiền điện tử",
+      "Kinh tế vĩ mô"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH016",
+    "title": "Trang Điểm Cá Nhân: Phong Cách Tự Nhiên & Nổi Bật",
+    "slug": "trang-diem-ca-nhan-phong-cach-tu-nhien-noi-bat",
+    "category": "Làm đẹp & Thời trang",
+    "sub_category": "Trang điểm",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV015",
+    "price": 600000,
+    "currency": "VND",
+    "discount_price": 499000,
+    "description": "Học cách trang điểm phù hợp với từng khuôn mặt và phong cách, từ trang điểm tự nhiên hàng ngày đến nổi bật cho các sự kiện.",
+    "learning_outcomes": [
+      "Xác định tone da và kiểu mặt",
+      "Kỹ thuật đánh nền, kẻ mày, kẻ mắt",
+      "Lựa chọn màu sắc phù hợp",
+      "Trang điểm nhanh gọn hàng ngày"
+    ],
+    "what_you_will_learn": [
+      "Các loại mỹ phẩm và công dụng",
+      "Quy trình trang điểm cơ bản",
+      "Tạo khối và highlight",
+      "Mẹo trang điểm bền màu"
+    ],
+    "requirements": [
+      "Bộ dụng cụ trang điểm cá nhân cơ bản",
+      "Gương soi"
+    ],
+    "duration_hours": 12,
+    "number_of_lectures": 30,
+    "rating": 4.8,
+    "number_of_reviews": 650,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/L5hYx4D/makeup-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-02",
+    "related_topics": [
+      "Chăm sóc da",
+      "Chăm sóc tóc",
+      "Thời trang",
+      "Phối đồ"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH017",
+    "title": "Lập Trình Di Động Với Flutter & Dart: Xây Dựng Ứng Dụng Đa Nền Tảng",
+    "slug": "lap-trinh-di-dong-flutter-dart-xay-dung-ung-dung-da-nen-tang",
+    "category": "Phát triển di động",
+    "sub_category": "Cross-platform",
+    "level": "Trung cấp",
+    "instructor_id": "GV001",
+    "price": 1800000,
+    "currency": "VND",
+    "discount_price": 1490000,
+    "description": "Học cách phát triển ứng dụng di động cho cả Android và iOS từ một codebase duy nhất với Flutter và Dart.",
+    "learning_outcomes": [
+      "Thành thạo Flutter Framework",
+      "Xây dựng giao diện UI đẹp mắt",
+      "Tích hợp API và database",
+      "Triển khai ứng dụng lên App Store/Google Play"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu về Dart và Flutter",
+      "Quản lý State trong Flutter",
+      "Làm việc với Widget và Layout",
+      "Thực hành với các dự án ứng dụng thực tế"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về lập trình",
+      "Máy tính cài đặt Flutter SDK"
+    ],
+    "duration_hours": 50,
+    "number_of_lectures": 130,
+    "rating": 4.7,
+    "number_of_reviews": 510,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/y4c0x9j/flutter-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-05",
+    "related_topics": [
+      "Android Development",
+      "iOS Development",
+      "React Native",
+      "Firebase"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH018",
+    "title": "Kỹ Năng Viết Content Marketing Chuyên Nghiệp",
+    "slug": "ky-nang-viet-content-marketing-chuyen-nghiep",
+    "category": "Marketing",
+    "sub_category": "Content Marketing",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV007",
+    "price": 900000,
+    "currency": "VND",
+    "discount_price": 750000,
+    "description": "Học cách viết content thu hút, bán hàng hiệu quả và tối ưu cho SEO, từ bài viết blog đến nội dung mạng xã hội.",
+    "learning_outcomes": [
+      "Nghiên cứu và phân tích đối tượng mục tiêu",
+      "Viết các dạng content khác nhau",
+      "Tối ưu content cho SEO",
+      "Đo lường hiệu quả content"
+    ],
+    "what_you_will_learn": [
+      "Các công thức viết Content (AIDA, PAS)",
+      "Cách tạo Headline gây sốc",
+      "Viết content cho website, blog, Facebook",
+      "Tối ưu hình ảnh và video cho content"
+    ],
+    "requirements": [
+      "Khả năng viết cơ bản",
+      "Sự sáng tạo và kiên trì"
+    ],
+    "duration_hours": 15,
+    "number_of_lectures": 40,
+    "rating": 4.8,
+    "number_of_reviews": 680,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/gR2F2H3/content-marketing-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-27",
+    "related_topics": [
+      "SEO",
+      "Social Media Marketing",
+      "Email Marketing",
+      "Copywriting"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH019",
+    "title": "Học Photoshop Cơ Bản Cho Người Mới Bắt Đầu",
+    "slug": "hoc-photoshop-co-ban-cho-nguoi-moi-bat-dau",
+    "category": "Thiết kế đồ họa",
+    "sub_category": "Đồ họa 2D",
+    "level": "Cơ bản",
+    "instructor_id": "GV002",
+    "price": 500000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học dành cho những người chưa từng biết về Photoshop, giúp bạn nắm vững các công cụ và kỹ thuật chỉnh sửa ảnh cơ bản.",
+    "learning_outcomes": [
+      "Làm quen với giao diện Photoshop",
+      "Sử dụng các công cụ chọn, cắt, chỉnh sửa cơ bản",
+      "Chỉnh sửa màu sắc và ánh sáng cho ảnh",
+      "Tạo ảnh đẹp hơn cho mạng xã hội"
+    ],
+    "what_you_will_learn": [
+      "Các layer và cách làm việc với layer",
+      "Tạo vùng chọn và mask",
+      "Retouch ảnh chân dung đơn giản",
+      "Xuất ảnh cho các mục đích khác nhau"
+    ],
+    "requirements": [
+      "Máy tính cài đặt Adobe Photoshop",
+      "Sự kiên trì luyện tập"
+    ],
+    "duration_hours": 15,
+    "number_of_lectures": 40,
+    "rating": 4.7,
+    "number_of_reviews": 900,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/nC1C2D4/photoshop-basic-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-20",
+    "related_topics": [
+      "Thiết kế ảnh",
+      "Retouch ảnh",
+      "Digital Art"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH020",
+    "title": "Marketing Du Kích (Guerrilla Marketing) & Lan Truyền",
+    "slug": "marketing-du-kich-guerrilla-marketing-lan-truyen",
+    "category": "Marketing",
+    "sub_category": "Chiến lược Marketing",
+    "level": "Trung cấp",
+    "instructor_id": "GV007",
+    "price": 1100000,
+    "currency": "VND",
+    "discount_price": 890000,
+    "description": "Khám phá nghệ thuật tạo ra các chiến dịch Marketing độc đáo, bất ngờ, ít tốn kém nhưng mang lại hiệu ứng lan truyền mạnh mẽ.",
+    "learning_outcomes": [
+      "Hiểu về nguyên lý Guerrilla Marketing",
+      "Xây dựng chiến lược Marketing Viral",
+      "Sáng tạo ý tưởng độc đáo",
+      "Ứng dụng trong thực tế kinh doanh"
+    ],
+    "what_you_will_learn": [
+      "Các case study thành công",
+      "Tư duy out-of-the-box trong Marketing",
+      "Cách tận dụng mạng xã hội",
+      "Đo lường hiệu quả chiến dịch du kích"
+    ],
+    "requirements": [
+      "Tư duy sáng tạo",
+      "Sự sẵn lòng thử nghiệm"
+    ],
+    "duration_hours": 10,
+    "number_of_lectures": 25,
+    "rating": 4.7,
+    "number_of_reviews": 300,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/C0L1H2R/guerrilla-marketing-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-08",
+    "related_topics": [
+      "Branding",
+      "PR",
+      "Marketing Truyền thống"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH021",
+    "title": "Khoa học về Hạnh phúc: Tìm kiếm ý nghĩa và niềm vui",
+    "slug": "khoa-hoc-ve-hanh-phuc-tim-kiem-y-nghia-va-niem-vui",
+    "category": "Phát triển bản thân",
+    "sub_category": "Tâm lý học",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV016",
+    "price": 700000,
+    "currency": "VND",
+    "discount_price": 550000,
+    "description": "Khóa học dựa trên các nghiên cứu khoa học về hạnh phúc, giúp bạn hiểu rõ và thực hành các phương pháp để có cuộc sống viên mãn hơn.",
+    "learning_outcomes": [
+      "Hiểu các yếu tố cấu thành hạnh phúc",
+      "Thực hành lòng biết ơn và chánh niệm",
+      "Xây dựng các mối quan hệ tích cực",
+      "Đối phó với căng thẳng và lo âu"
+    ],
+    "what_you_will_learn": [
+      "Các khái niệm cơ bản về tâm lý học hạnh phúc",
+      "Bài tập thực hành hàng ngày",
+      "Cách đặt mục tiêu có ý nghĩa",
+      "Tìm kiếm mục đích sống"
+    ],
+    "requirements": [
+      "Sự cởi mở và sẵn lòng thay đổi"
+    ],
+    "duration_hours": 15,
+    "number_of_lectures": 35,
+    "rating": 4.9,
+    "number_of_reviews": 950,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/D8G3R4H/happiness-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-19",
+    "related_topics": [
+      "Tự phát triển",
+      "Thiền định",
+      "Sức khỏe tinh thần",
+      "Trí tuệ cảm xúc"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH022",
+    "title": "Thành Thạo Microsoft Power BI cho Phân Tích & Báo Cáo",
+    "slug": "thanh-thao-microsoft-power-bi-cho-phan-tich-bao-cao",
+    "category": "Khoa học Dữ liệu",
+    "sub_category": "Business Intelligence",
+    "level": "Trung cấp",
+    "instructor_id": "GV004",
+    "price": 1600000,
+    "currency": "VND",
+    "discount_price": 1290000,
+    "description": "Học cách sử dụng Power BI để tạo các dashboard và báo cáo tương tác, biến dữ liệu thô thành thông tin giá trị.",
+    "learning_outcomes": [
+      "Kết nối và làm sạch dữ liệu từ nhiều nguồn",
+      "Xây dựng mô hình dữ liệu quan hệ",
+      "Sử dụng DAX để tạo các phép tính phức tạp",
+      "Thiết kế dashboard trực quan và hiệu quả"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu về Power BI Desktop",
+      "Làm việc với Power Query Editor",
+      "Tạo các loại biểu đồ và báo cáo",
+      "Chia sẻ báo cáo trên Power BI Service"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về Excel",
+      "Máy tính cài đặt Power BI Desktop"
+    ],
+    "duration_hours": 30,
+    "number_of_lectures": 70,
+    "rating": 4.7,
+    "number_of_reviews": 410,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/sK1YQ0K/powerbi-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-06",
+    "related_topics": [
+      "SQL",
+      "Excel",
+      "Tableau",
+      "Data Warehousing"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH023",
+    "title": "Khóa học Photoshop Retouch Ảnh Chân Dung Chuyên Nghiệp",
+    "slug": "khoa-hoc-photoshop-retouch-anh-chan-dung-chuyen-nghiep",
+    "category": "Nhiếp ảnh",
+    "sub_category": "Chỉnh sửa ảnh",
+    "level": "Nâng cao",
+    "instructor_id": "GV005",
+    "price": 990000,
+    "currency": "VND",
+    "discount_price": 790000,
+    "description": "Học các kỹ thuật retouch ảnh chân dung nâng cao trong Photoshop để tạo ra những bức ảnh mịn màng, sắc nét và ấn tượng.",
+    "learning_outcomes": [
+      "Xử lý da chuyên nghiệp",
+      "Chỉnh sửa mắt, môi, tóc",
+      "Tạo khối và ánh sáng cho khuôn mặt",
+      "Nâng cao chất lượng ảnh chân dung"
+    ],
+    "what_you_will_learn": [
+      "Các công cụ retouch chuyên sâu (Frequency Separation, Dodge & Burn)",
+      "Sử dụng Masks và Blending Modes",
+      "Làm việc với màu sắc và tông màu",
+      "Workflow chỉnh sửa ảnh chuyên nghiệp"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về Photoshop",
+      "Máy tính cài đặt Adobe Photoshop"
+    ],
+    "duration_hours": 20,
+    "number_of_lectures": 50,
+    "rating": 4.6,
+    "number_of_reviews": 280,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/D5X0Q1P/photoshop-retouch-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-07",
+    "related_topics": [
+      "Lightroom",
+      "Chụp ảnh chân dung",
+      "Thiết kế ảnh"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH024",
+    "title": "Học Tiếng Trung Giao Tiếp Cấp Tốc HSK 2",
+    "slug": "hoc-tieng-trung-giao-tiep-cap-toc-hsk2",
+    "category": "Ngoại ngữ",
+    "sub_category": "Tiếng Trung",
+    "level": "Cơ bản",
+    "instructor_id": "GV017",
+    "price": 800000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học giúp bạn nắm vững kiến thức HSK 2 và tự tin giao tiếp các tình huống cơ bản hàng ngày bằng tiếng Trung.",
+    "learning_outcomes": [
+      "Nắm vững 300 từ vựng HSK 2",
+      "Sử dụng các cấu trúc ngữ pháp cơ bản",
+      "Giao tiếp về các chủ đề quen thuộc",
+      "Đạt điểm cao trong kỳ thi HSK 2"
+    ],
+    "what_you_will_learn": [
+      "Hệ thống Pinyin và phát âm chuẩn",
+      "Các nét cơ bản và quy tắc viết chữ Hán",
+      "Hội thoại theo chủ đề (chào hỏi, mua sắm, giới thiệu...)",
+      "Luyện nghe và phản xạ"
+    ],
+    "requirements": [
+      "Sự kiên trì và đam mê học tiếng Trung",
+      "Có micro để luyện nói"
+    ],
+    "duration_hours": 30,
+    "number_of_lectures": 80,
+    "rating": 4.8,
+    "number_of_reviews": 500,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/k5C2C4d/chinese-hsk2-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-25",
+    "related_topics": [
+      "HSK 1",
+      "HSK 3",
+      "Tiếng Trung thương mại",
+      "Du lịch Trung Quốc"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH025",
+    "title": "Quản Lý Dự Án Agile & Scrum Toàn Tập",
+    "slug": "quan-ly-du-an-agile-scrum-toan-tap",
+    "category": "Kinh doanh",
+    "sub_category": "Quản lý dự án",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV018",
+    "price": 1500000,
+    "currency": "VND",
+    "discount_price": 1190000,
+    "description": "Nắm vững các nguyên tắc và thực hành Agile, Scrum để quản lý dự án linh hoạt, hiệu quả và thành công.",
+    "learning_outcomes": [
+      "Hiểu về tư duy Agile và Framework Scrum",
+      "Vai trò của Scrum Master, Product Owner, Development Team",
+      "Thực hành các nghi lễ Scrum (Sprint Planning, Daily Scrum...)",
+      "Áp dụng Agile vào dự án thực tế"
+    ],
+    "what_you_will_learn": [
+      "Giới thiệu về Agile Manifesto",
+      "Các công cụ hỗ trợ Agile (Jira, Trello)",
+      "Xử lý các vấn đề thường gặp trong dự án Agile",
+      "Phát triển sản phẩm theo vòng lặp ngắn"
+    ],
+    "requirements": [
+      "Sự quan tâm đến quản lý dự án",
+      "Tư duy linh hoạt"
+    ],
+    "duration_hours": 25,
+    "number_of_lectures": 60,
+    "rating": 4.8,
+    "number_of_reviews": 450,
+    "is_bestseller": 1,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/N2L0C1H/agile-scrum-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-09",
+    "related_topics": [
+      "PMP",
+      "Kanban",
+      "Product Management",
+      "Leadership"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH026",
+    "title": "Nghệ Thuật Nhiếp Ảnh Cơ Bản: Nắm Vững Kỹ Thuật Chụp",
+    "slug": "nghe-thuat-nhiep-anh-co-ban-nam-vung-ky-thuat-chup",
+    "category": "Nhiếp ảnh",
+    "sub_category": "Kỹ thuật chụp",
+    "level": "Cơ bản",
+    "instructor_id": "GV019",
+    "price": 650000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học dành cho người mới bắt đầu với máy ảnh DSLR/Mirrorless, giúp bạn hiểu rõ các khái niệm cơ bản và chụp được những bức ảnh đẹp hơn.",
+    "learning_outcomes": [
+      "Hiểu về khẩu độ, tốc độ màn trập, ISO",
+      "Kỹ thuật lấy nét và bố cục cơ bản",
+      "Chụp ảnh trong điều kiện ánh sáng khác nhau",
+      "Sử dụng các chế độ chụp trên máy ảnh"
+    ],
+    "what_you_will_learn": [
+      "Cấu tạo và chức năng máy ảnh",
+      "Các loại ống kính và cách chọn",
+      "Chụp ảnh phong cảnh, chân dung, vật thể",
+      "Mẹo chụp ảnh đẹp bằng điện thoại"
+    ],
+    "requirements": [
+      "Máy ảnh DSLR hoặc Mirrorless (có thể dùng điện thoại cao cấp)",
+      "Sự đam mê với nhiếp ảnh"
+    ],
+    "duration_hours": 18,
+    "number_of_lectures": 45,
+    "rating": 4.8,
+    "number_of_reviews": 800,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/P9t2m2M/photography-basic-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-22",
+    "related_topics": [
+      "Chỉnh sửa ảnh",
+      "Lightroom",
+      "Studio Lighting",
+      "Làm phim"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH027",
+    "title": "Dinh Dưỡng Cân Bằng: Ăn Ngon Sống Khỏe",
+    "slug": "dinh-duong-can-bang-an-ngon-song-khoe",
+    "category": "Sức khỏe & Phong cách sống",
+    "sub_category": "Dinh dưỡng",
+    "level": "Mọi cấp độ",
+    "instructor_id": "GV020",
+    "price": 550000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học cung cấp kiến thức toàn diện về dinh dưỡng, giúp bạn xây dựng chế độ ăn uống khoa học để nâng cao sức khỏe và phòng ngừa bệnh tật.",
+    "learning_outcomes": [
+      "Hiểu về các nhóm chất dinh dưỡng",
+      "Xây dựng thực đơn cân bằng",
+      "Kiểm soát cân nặng hiệu quả",
+      "Lựa chọn thực phẩm thông minh"
+    ],
+    "what_you_will_learn": [
+      "Nhu cầu dinh dưỡng theo lứa tuổi",
+      "Dinh dưỡng cho người tập gym, người ăn chay",
+      "Cách đọc nhãn thực phẩm",
+      "Thực hành lên kế hoạch bữa ăn"
+    ],
+    "requirements": [
+      "Không có yêu cầu đặc biệt"
+    ],
+    "duration_hours": 12,
+    "number_of_lectures": 30,
+    "rating": 4.9,
+    "number_of_reviews": 750,
+    "is_bestseller": 1,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/h7g4P8G/nutrition-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-06-28",
+    "related_topics": [
+      "Thực phẩm chức năng",
+      "Ăn kiêng",
+      "Tập luyện",
+      "Chế độ ăn chay"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  },
+  {
+    "id": "KH028",
+    "title": "Lập Trình Game với Unity 3D & C#",
+    "slug": "lap-trinh-game-unity-3d-csharp",
+    "category": "Phát triển Game",
+    "sub_category": "Game Development",
+    "level": "Trung cấp",
+    "instructor_id": "GV021",
+    "price": 2000000,
+    "currency": "VND",
+    "discount_price": 1600000,
+    "description": "Học cách sử dụng Unity 3D và ngôn ngữ C# để phát triển các tựa game 2D và 3D chuyên nghiệp.",
+    "learning_outcomes": [
+      "Thành thạo Unity Editor",
+      "Lập trình logic game với C#",
+      "Tạo animation và hiệu ứng âm thanh",
+      "Xuất bản game lên các nền tảng"
+    ],
+    "what_you_will_learn": [
+      "Các khái niệm cơ bản về Game Development",
+      "Quản lý Scenes, GameObjects, Components",
+      "Vật lý và va chạm trong game",
+      "Xây dựng game Flappy Bird 2D và game bắn súng 3D"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về lập trình (ưu tiên C#)",
+      "Máy tính có cài đặt Unity Hub"
+    ],
+    "duration_hours": 60,
+    "number_of_lectures": 140,
+    "rating": 4.7,
+    "number_of_reviews": 350,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/s5T2C4D/unity-game-dev-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU1",
+    "last_updated": "2025-07-09",
+    "related_topics": [
+      "Unreal Engine",
+      "Blender",
+      "Game Design",
+      "Lập trình C++"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH029",
+    "title": "Kỹ Năng Đàm Phán & Thuyết Phục Trong Kinh Doanh",
+    "slug": "ky-nang-dam-phan-thuyet-phuc-trong-kinh-doanh",
+    "category": "Kinh doanh",
+    "sub_category": "Kỹ năng mềm",
+    "level": "Nâng cao",
+    "instructor_id": "GV012",
+    "price": 950000,
+    "currency": "VND",
+    "discount_price": 750000,
+    "description": "Nắm vững các chiến lược và kỹ thuật đàm phán, thuyết phục để đạt được kết quả tối ưu trong mọi giao dịch kinh doanh.",
+    "learning_outcomes": [
+      "Xác định mục tiêu và chiến lược đàm phán",
+      "Sử dụng các kỹ thuật thuyết phục hiệu quả",
+      "Giải quyết xung đột và bế tắc",
+      "Xây dựng mối quan hệ lâu dài"
+    ],
+    "what_you_will_learn": [
+      "Các giai đoạn của quá trình đàm phán",
+      "Đọc vị đối phương và ngôn ngữ cơ thể",
+      "Kỹ năng lắng nghe và đặt câu hỏi",
+      "Thực hành các tình huống đàm phán giả định"
+    ],
+    "requirements": [
+      "Sự kiên trì và tư duy chiến lược"
+    ],
+    "duration_hours": 15,
+    "number_of_lectures": 40,
+    "rating": 4.8,
+    "number_of_reviews": 380,
+    "is_bestseller": 0,
+    "is_new": 0,
+    "thumbnail_url": "https://i.ibb.co/hR9cR02/negotiation-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU1",
+    "last_updated": "2025-07-01",
+    "related_topics": [
+      "Lãnh đạo",
+      "Quản lý nhân sự",
+      "Sales",
+      "Quan hệ khách hàng"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 1
+  },
+  {
+    "id": "KH030",
+    "title": "Học Vẽ Truyện Tranh Manga/Comic Từ Cơ Bản",
+    "slug": "hoc-ve-truyen-tranh-manga-comic-tu-co-ban",
+    "category": "Nghệ thuật & Âm nhạc",
+    "sub_category": "Vẽ",
+    "level": "Cơ bản",
+    "instructor_id": "GV022",
+    "price": 600000,
+    "currency": "VND",
+    "discount_price": null,
+    "description": "Khóa học hướng dẫn các bước cơ bản để vẽ nhân vật, biểu cảm, tư thế và cách kể chuyện bằng hình ảnh theo phong cách Manga/Comic.",
+    "learning_outcomes": [
+      "Vẽ nhân vật Manga/Comic cơ bản",
+      "Biểu cảm khuôn mặt và tư thế",
+      "Tạo trang truyện và bố cục",
+      "Kể chuyện bằng hình ảnh"
+    ],
+    "what_you_will_learn": [
+      "Các công cụ vẽ truyện tranh (truyền thống và kỹ thuật số)",
+      "Giải phẫu cơ bản và tỷ lệ cơ thể",
+      "Thiết kế trang phục và phụ kiện",
+      "Kỹ thuật tô màu và đổ bóng"
+    ],
+    "requirements": [
+      "Giấy, bút chì, tẩy (hoặc bảng vẽ điện tử)",
+      "Sự đam mê với truyện tranh"
+    ],
+    "duration_hours": 20,
+    "number_of_lectures": 50,
+    "rating": 4.7,
+    "number_of_reviews": 400,
+    "is_bestseller": 0,
+    "is_new": 1,
+    "thumbnail_url": "https://i.ibb.co/h7g4P8G/manga-drawing-course.jpg",
+    "preview_video_url": "https://www.youtube.com/embed/JjsGdkPGdIU",
+    "last_updated": "2025-07-08",
+    "related_topics": [
+      "Vẽ Chân dung",
+      "Vẽ Phong cảnh",
+      "Thiết kế nhân vật",
+      "Sáng tác truyện"
+    ],
+    "language": "Tiếng Việt",
+    "certifiable": 0
+  }
+]

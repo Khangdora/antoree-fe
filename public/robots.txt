@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://antoree.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /dashboard/
+
+# Allow search engines to crawl important pages
+Allow: /courses
+Allow: /categories
+Allow: /search
+Allow: /promotions
+Allow: /contact
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
