@@ -4,6 +4,8 @@
 
 Antoree is a modern online learning platform built with React, TypeScript, and Tailwind CSS, offering a seamless educational experience with AI-powered course recommendations, search capabilities, and a responsive user interface.
 
+![Home Page](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi69xJk616oPg4QwgGal1YIlqqh6_-YCb25q0qmSXHtOEp_IZe4OKrLVvrS5fHWaNQzNiwHh4rCuT6PRE0AQA5SRh2dPfDsfFG6UnhIGorngJri6ah4IHTmbfKzdZ1u9hHa0_-b6ItT_1pGoTqOgC64Y1EW0hkMDFomubYIE95_wtpNi-DmfKgT109K3y8_/s1600/screenshot-home.png)
+
 ## 📋 Table of Contents
 
 - [Features](#features)
