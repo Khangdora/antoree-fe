@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import { coursesService } from "../../services/api";
@@ -36,11 +33,26 @@ const Header = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLDivElement>(null);
   const categoriesDropdownRef = useRef<HTMLDivElement>(null);
-  const accountRef = useRef<HTMLDivElement>(null);
-  const cartRef = useRef<HTMLDivElement>(null);
+  const accountRef = useRef<HTMLDivElement>(
+    null
+  ) as React.RefObject<HTMLDivElement>;
+  const cartRef = useRef<HTMLDivElement>(
+    null
+  ) as React.RefObject<HTMLDivElement>;
   const categoriesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const accountTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const cartTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const [accountDropdownPosition, setAccountDropdownPosition] = useState<{
+    right?: number;
+    left?: number;
+    width?: string;
+  }>({ right: 0 });
+  const [cartDropdownPosition, setCartDropdownPosition] = useState<{
+    right?: number;
+    left?: number;
+    width?: string;
+  }>({ right: 0 });
 
   const navigation = [
     { name: "Khuyến mãi", href: "/promotions" },
@@ -191,7 +203,19 @@ const Header = () => {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/filter?q=${encodeURIComponent(searchQuery)}`);
+      const searchPath = `/filter?q=${encodeURIComponent(searchQuery)}`;
+      
+      // If already on filter page, use navigate with replace and trigger reload
+      if (location.pathname === '/filter') {
+        navigate(searchPath, { replace: true });
+        // Dispatch an event that FilterPage can listen for
+        window.dispatchEvent(new CustomEvent('header-search-updated', { 
+          detail: { query: searchQuery } 
+        }));
+      } else {
+        navigate(searchPath);
+      }
+      
       setShowSearchResults(false);
       setSearchQuery("");
       setIsSearchFocused(false);
@@ -202,6 +226,31 @@ const Header = () => {
   const handleCloseBanner = () => {
     setShowBanner(false);
     localStorage.setItem("antoree-show-banner", "false");
+  };
+
+  const calculateDropdownPositionRightSide = (
+    ref: React.RefObject<HTMLDivElement>,
+    setPosition: React.Dispatch<
+      React.SetStateAction<{ right?: number; left?: number; width?: string }>
+    >
+  ) => {
+    if (!ref.current) return;
+
+    const windowWidth = window.innerWidth;
+    const isMobile = windowWidth < 640; // sm breakpoint là 640px
+    const dropdownWidth = 320;
+  
+    if (!isMobile) {
+      setPosition({ right: 0 });
+    } else {
+      // Giao diện < sm
+      if (windowWidth < dropdownWidth) {
+        // Nếu màn hình nhỏ hơn dropdown: Chiếm toàn màn hình, căn trái
+        setPosition({ left: 0, right: 0, width: "100%" });
+      } else {
+        setPosition({ left: 0, right: undefined });
+      }
+    }
   };
 
   // Calculate dropdown position based on available space
@@ -275,6 +324,7 @@ const Header = () => {
     if (accountTimeoutRef.current) {
       clearTimeout(accountTimeoutRef.current);
     }
+    calculateDropdownPositionRightSide(accountRef, setAccountDropdownPosition);
     setShowAccountDropdown(true);
   };
 
@@ -286,11 +336,24 @@ const Header = () => {
 
   // Hover handlers for cart dropdown
   const handleCartMouseEnter = () => {
+
+    if(window.innerWidth < 500) return;
+
     if (cartTimeoutRef.current) {
       clearTimeout(cartTimeoutRef.current);
     }
+    calculateDropdownPositionRightSide(cartRef, setCartDropdownPosition);
     setShowCartDropdown(true);
   };
+
+  const handleCartClick = () => {
+    if (window.innerWidth < 500) {
+      navigate('/cart');
+      return;
+    }
+
+    setShowCartDropdown(!showCartDropdown);
+  }
 
   const handleCartMouseLeave = () => {
     cartTimeoutRef.current = setTimeout(() => {
@@ -373,9 +436,9 @@ const Header = () => {
 
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="sm:hidden flex items-center justify-between py-3">
           {/* Logo */}
-          <div className="flex-shrink-0 mr-4">
+          <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group">
               <motion.div
                 className="h-10 w-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
@@ -400,8 +463,14 @@ const Header = () => {
               </motion.div>
               <motion.span
                 className="ml-3 text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
-                style={theme === 'dark' ? {backgroundImage:
-                    "linear-gradient(to left, #3b82f6, #8b5cf6, #d946ef)"} : {}}
+                style={
+                  theme === "dark"
+                    ? {
+                        backgroundImage:
+                          "linear-gradient(to left, #3b82f6, #8b5cf6, #d946ef)",
+                      }
+                    : {}
+                }
                 initial={false}
                 animate={{ opacity: 1 }}
                 whileHover={{
@@ -415,7 +484,143 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Navigation */}
+          {/* Theme toggle */}
+          <div className="flex items-center">
+            <motion.button
+              onClick={toggleTheme}
+              className={`relative inline-flex h-8 w-14 items-center rounded-full cursor-pointer ${
+                theme === "dark"
+                  ? "bg-gradient-to-r from-blue-800 via-indigo-700 to-purple-800 shadow-lg shadow-blue-500/25"
+                  : "bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-300 shadow-lg shadow-amber-500/25"
+              } focus:outline-none`}
+              aria-label="Toggle theme"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={false}
+            >
+              {/* Existing theme toggle content */}
+              <motion.div
+                className="absolute w-6 h-6 rounded-full flex items-center justify-center"
+                initial={false}
+                animate={{
+                  x: theme === "dark" ? 6 : 24,
+                  rotate: theme === "dark" ? -30 : 0,
+                  backgroundColor: theme === "dark" ? "#1e3a8a" : "#fcd34d",
+                  boxShadow:
+                    theme === "dark"
+                      ? "0 0 8px 1px rgba(59, 130, 246, 0.6), inset 0 0 4px rgba(30, 64, 175, 0.8)"
+                      : "0 0 8px 1px rgba(251, 191, 36, 0.6), inset 0 0 4px rgba(217, 119, 6, 0.8)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 700,
+                  damping: 30,
+                }}
+              >
+                {/* Existing icon content */}
+                <motion.div
+                  initial={false}
+                  animate={{
+                    rotate: theme === "dark" ? 0 : 180,
+                    scale: theme === "dark" ? 1 : 0.8,
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {theme === "dark" ? (
+                    <svg
+                      className="w-4 h-4 text-blue-100"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="w-4 h-4 text-amber-700"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                initial={false}
+                animate={{
+                  opacity: [0.5, 0.7, 0.5],
+                  scale: [1, 1.02, 1],
+                  background:
+                    theme === "dark"
+                      ? "linear-gradient(90deg, rgba(30,58,138,0.3), rgba(79,70,229,0.2), rgba(124,58,237,0.3))"
+                      : "linear-gradient(90deg, rgba(251,191,36,0.3), rgba(249,115,22,0.2), rgba(234,179,8,0.3))",
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Second row for small devices / Main row for desktop */}
+        <div className="flow sm:flex items-center sm:justify-between h-16">
+          {/* Logo for medium+ devices */}
+          <div className="hidden sm:block flex-shrink-0 mr-4">
+            <Link to="/" className="flex items-center group">
+              <motion.div
+                className="h-10 w-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 6,
+                  boxShadow:
+                    "0 10px 25px -5px rgba(59, 130, 246, 0.5), 0 8px 10px -6px rgba(147, 51, 234, 0.5)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
+              >
+                <motion.span
+                  className="text-white font-bold text-xl"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  A
+                </motion.span>
+              </motion.div>
+              <motion.span
+                className="ml-3 text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+                style={
+                  theme === "dark"
+                    ? {
+                        backgroundImage:
+                          "linear-gradient(to left, #3b82f6, #8b5cf6, #d946ef)",
+                      }
+                    : {}
+                }
+                initial={false}
+                animate={{ opacity: 1 }}
+                whileHover={{
+                  backgroundImage:
+                    "linear-gradient(to right, #3b82f6, #8b5cf6, #d946ef)",
+                  transition: { duration: 0.3 },
+                }}
+              >
+                Antoree
+              </motion.span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
             {navigation.map((item) => (
               <Link
@@ -640,9 +845,19 @@ const Header = () => {
                             >
                               <CategoryCard
                                 category={category}
-                                onCategoryClick={() =>
-                                  setShowCategoriesDropdown(false)
-                                }
+                                onCategoryClick={() => {
+                                  setShowCategoriesDropdown(false);
+                                  
+                                  // Special handling when on filter page
+                                  if (location.pathname === '/filter') {
+                                    const categoryPath = `/filter?category=${category.id}`;
+                                    navigate(categoryPath, { replace: true });
+                                    window.dispatchEvent(new CustomEvent('header-category-updated', { 
+                                      detail: { categoryId: category.id } 
+                                    }));
+                                    return;
+                                  }
+                                }}
                                 variant="main"
                               />
                             </motion.div>
@@ -729,8 +944,11 @@ const Header = () => {
             </motion.div>
           </nav>
 
-          {/* Search bar */}
-          <div className="flex-1 max-w-xl mx-6 relative" ref={searchRef}>
+          {/* Desktop Search bar */}
+          <div
+            className="hidden md:flex flex-1 max-w-xl mx-6 relative"
+            ref={searchRef}
+          >
             <motion.form
               onSubmit={handleSearchSubmit}
               initial={{ opacity: 0.9 }}
@@ -914,10 +1132,10 @@ const Header = () => {
             )}
           </div>
 
-          {/* Right section */}
-          <div className="flex items-center space-x-2">
+          {/* Right section - Desktop */}
+          <div className="flex items-center space-x-2 justify-between">
             {/* Theme toggle - Enhanced */}
-            <div className="flex items-center">
+            <div className="hidden sm:flex items-center">
               <motion.button
                 onClick={toggleTheme}
                 className={`relative inline-flex h-8 w-14 items-center rounded-full cursor-pointer ${
@@ -1023,14 +1241,18 @@ const Header = () => {
                 </svg>
               </button>
 
-              
               {showAccountDropdown && (
-                <motion.div 
+                <motion.div
                   className="absolute top-full right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl mt-2 w-56 z-50 overflow-hidden animate-slideInFromTop"
                   initial={{ opacity: 0, y: 10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
+                  style={{ 
+                    right: accountDropdownPosition.right, 
+                    left: accountDropdownPosition.left,
+                    width: accountDropdownPosition.width
+                  }}
                 >
                   <div className="p-2">
                     <div className="px-4 py-3 text-sm text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-t-xl">
@@ -1077,7 +1299,8 @@ const Header = () => {
                       </Link>
                       <Link
                         to="/favorites"
-                        className="flex items-center px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 rounded-xl group">
+                        className="flex items-center px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 rounded-xl group"
+                      >
                         <span className="mr-3 flex items-center group-hover:scale-110 transition-transform duration-200">
                           <svg
                             className="w-5 h-5"
@@ -1091,7 +1314,8 @@ const Header = () => {
                       </Link>
                       <Link
                         to="/history"
-                        className="flex items-center px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 rounded-xl group">
+                        className="flex items-center px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 rounded-xl group"
+                      >
                         <span className="mr-3 flex items-center group-hover:scale-110 transition-transform duration-200">
                           <svg
                             className="w-5 h-5"
@@ -1107,7 +1331,6 @@ const Header = () => {
                   </div>
                 </motion.div>
               )}
-              
             </div>
 
             {/* Cart Dropdown - Compact */}
@@ -1117,7 +1340,7 @@ const Header = () => {
               onMouseEnter={handleCartMouseEnter}
               onMouseLeave={handleCartMouseLeave}
             >
-              <button className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl hover:scale-110">
+              <button className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl hover:scale-110" onClick={handleCartClick}>
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -1143,6 +1366,11 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
+                  style={{ 
+                    right: cartDropdownPosition.right, 
+                    left: cartDropdownPosition.left,
+                    width: cartDropdownPosition.width
+                  }}
                 >
                   <div className="p-2">
                     <div className="px-4 py-3 text-sm font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-t-xl">
@@ -1236,6 +1464,26 @@ const Header = () => {
               )}
             </div>
 
+            {/* Mobile search button */}
+            <button
+              onClick={() => navigate("/filter")}
+              className="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-110"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -1267,76 +1515,226 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <motion.div
-            className="md:hidden"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+        {/* Mobile menu - Improved */}
+        <AnimatePresence>
+          {isMenuOpen && (
             <motion.div
-              className="px-2 pt-2 pb-3 space-y-2 sm:px-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 rounded-b-2xl"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                  },
-                },
-              }}
-              initial="hidden"
-              animate="visible"
+              className="md:hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              {navigation.map((item, index) => (
+              {/* Mobile search */}
+              <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700">
+                <form onSubmit={handleSearchSubmit} className="relative">
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm khóa học..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-4 py-2 pl-10 pr-10 text-sm border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 dark:text-white"
+                  />
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg
+                      className="h-4 w-4 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="absolute inset-y-0 right-0 flex items-center">
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery("")}
+                        className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    )}
+                    <button
+                      type="submit"
+                      className="p-1.5 mr-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg"
+                    >
+                      <svg
+                        className="h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5-5 5"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              {/* Mobile navigation links */}
+              <motion.div
+                className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 dark:bg-gray-800/50 rounded-b-2xl"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
+                initial="hidden"
+                animate="visible"
+              >
+                {/* Navigation links */}
+                {navigation.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                  >
+                    <Link
+                      to={item.href}
+                      className={`flex items-center px-4 py-2 text-base font-medium transition-all duration-200 rounded-xl ${
+                        isActive(item.href)
+                          ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 shadow-md"
+                          : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+
+                {/* Categories */}
                 <motion.div
-                  key={item.name}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
                   }}
                 >
                   <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-4 py-3 text-base font-medium transition-all duration-200 rounded-xl ${
-                      isActive(item.href)
-                        ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 shadow-md"
-                        : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700"
-                    }`}
+                    to="/filter"
+                    className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 rounded-xl"
                     onClick={() => setIsMenuOpen(false)}
-                    style={{ animationDelay: `${index * 50}ms` }}
                   >
-                    {item.name}
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                    Danh mục khóa học
                   </Link>
                 </motion.div>
-              ))}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <Link
-                  to="/categories"
-                  className="flex items-center gap-2 px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 rounded-xl"
-                  onClick={() => setIsMenuOpen(false)}
+
+                {/* Additional mobile menu links */}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                  <Link
+                    to="/favorites"
+                    className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 rounded-xl"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                  </svg>
-                  Danh mục khóa học
-                </Link>
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 01-1.162-.682 22.045 22.045 0 01-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 018-2.828A4.5 4.5 0 0118 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 01-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 01-.69.001l-.002-.001z" />
+                    </svg>
+                    Khóa học yêu thích
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  <Link
+                    to="/history"
+                    className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 rounded-xl"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    Lịch sử xem
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  <Link
+                    to="/cart"
+                    className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 rounded-xl"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                    </svg>
+                    Giỏ hàng
+                    {cartItems.length > 0 && (
+                      <span className="ml-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {cartItems.length}
+                      </span>
+                    )}
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );

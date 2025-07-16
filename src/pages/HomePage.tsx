@@ -14,7 +14,7 @@ type Course = APICourse | LocalCourse;
 
 const HomePage = () => {
   const [featuredCourses, setFeaturedCourses] = useState<Course[]>([]);
-  const [categories, setCategories] = useState<{ name: string; count: number }[]>([]);
+  const [categories, setCategories] = useState<{ name: string; count: number; id: string }[]>([]);
   const [isLoadingCourses, setIsLoadingCourses] = useState(true);
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -60,6 +60,7 @@ const HomePage = () => {
           .filter(cat => cat.name)
           .map(cat => ({
             name: cat.name,
+            id: cat.id,
             count: Math.floor(Math.random() * 20) + 5 // Random count for visual display
           }))
           .slice(0, 8); // Get top 8 categories
@@ -74,7 +75,8 @@ const HomePage = () => {
       const localCategories = dataProcessor.getCategories().slice(0, 8);
       const categoryData = localCategories.map(name => ({ 
         name, 
-        count: Math.floor(dataProcessor.getStats().total_courses / localCategories.length) 
+        count: Math.floor(dataProcessor.getStats().total_courses / localCategories.length),
+        id: '' // Error dataProcessor.getCategoryId(name)
       }));
       setCategories(categoryData);
     } finally {
@@ -554,7 +556,7 @@ const HomePage = () => {
                     className="group"
                   >
                     <Link
-                      to={`/courses?category=${encodeURIComponent(category.name)}`}
+                      to={`/filter?category=${encodeURIComponent(category.id)}`}
                       className="block p-8 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-400"
                     >
                       <div className="flex flex-col items-center text-center">

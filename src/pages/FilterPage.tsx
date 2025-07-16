@@ -31,7 +31,6 @@ const FilterPage = () => {
     initialCategoryId
   );
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000000]); // 0đ - 5tr
-  const [sidebarOpen, setSidebarOpen] = useState(true);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const [courses, setCourses] = useState<Course[]>([]);
@@ -172,6 +171,39 @@ const FilterPage = () => {
 
     fetchFilteredCourses();
   };
+
+  useEffect(() => {
+    const handleHeaderSearch = (e: CustomEvent) => {
+      setFilterSettings(prev => ({
+        ...prev,
+        searchQuery: e.detail.query,
+        category: null // Reset category when searching
+      }));
+      fetchFilteredCourses();
+    };
+
+    window.addEventListener('header-search-updated', handleHeaderSearch as EventListener);
+    return () => {
+      window.removeEventListener('header-search-updated', handleHeaderSearch as EventListener);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleHeaderCategorySelect = (e: CustomEvent) => {
+      setFilterSettings(prev => ({
+        ...prev,
+        category: e.detail.categoryId,
+        searchQuery: '' // Reset search when selecting category
+      }));
+      setSelectedCategory(e.detail.categoryId);
+      fetchFilteredCourses();
+    };
+
+    window.addEventListener('header-category-updated', handleHeaderCategorySelect as EventListener);
+    return () => {
+      window.removeEventListener('header-category-updated', handleHeaderCategorySelect as EventListener);
+    };
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -361,32 +393,6 @@ const FilterPage = () => {
         {/* Main Content with Sidebar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Mobile toggle for sidebar */}
-            <div className="lg:hidden mb-4">
-              <button
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="w-full flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-md"
-              >
-                <span className="font-medium text-gray-900 dark:text-white">
-                  Lọc & Danh mục
-                </span>
-                <svg
-                  className={`w-5 h-5 transform transition-transform duration-300 ${
-                    sidebarOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-            </div>
 
             {/* Main content area */}
             <div className="w-full">
@@ -472,9 +478,9 @@ const FilterPage = () => {
                   </div>
 
                   {/* Additional Filters Row */}
-                  <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex flex-col md:flex-wrap md:flex-row items-center gap-4">
                     {/* Price Range Slider */}
-                    <div className="flex-1 space-y-2">
+                    <div className="flex-1 space-y-2 w-full md:w-auto">
                       <div className="flex justify-between items-center">
                         <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
                           Khoảng giá
@@ -568,7 +574,7 @@ const FilterPage = () => {
                     </div>
 
                     {/* Rating Filter as Dropdown */}
-                    <div className="relative">
+                    <div className="relative w-full md:w-auto">
                       <select
                         value={filterSettings.rating ?? ""}
                         onChange={(e) =>
@@ -580,7 +586,7 @@ const FilterPage = () => {
                           }))
                         }
                         className="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 
-      bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white w-[200px]
+      bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white w-full md:w-[200px]
       focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none"
                       >
                         <option value="">Tất cả đánh giá</option>

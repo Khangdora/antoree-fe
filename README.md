@@ -1,182 +1,151 @@
-# AnToRee Academy - Nền tảng học trực tuyến với Render Sleep Handling
+# Antoree - Online Learning Platform
 
-AnToRee Academy là một nền tảng học trực tuyến hiện đại được xây dựng bằng React, TypeScript và Tailwind CSS. Dự án cung cấp hơn 1000+ khóa học chất lượng cao từ các lĩnh vực như lập trình, thiết kế, marketing, kinh doanh và nhiều hơn nữa.
+![Antoree Logo](/public/ico.png)
 
-## 🔗 Production Links
+Antoree is a modern online learning platform built with React, TypeScript, and Tailwind CSS, offering a seamless educational experience with AI-powered course recommendations, search capabilities, and a responsive user interface.
 
-- **Production API**: https://antoree-api.onrender.com/api
-- **Health Check**: https://antoree-api.onrender.com/api/health
-- **GitHub Repository**: https://github.com/your-username/antoree
+## 📋 Table of Contents
 
-## ✨ Tính năng chính
+- [Features](#features)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building for Production](#building-for-production)
+- [Project Structure](#project-structure)
+- [Key Components](#key-components)
+- [AI Integration](#ai-integration)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
 
-### 🎓 Khóa học đa dạng
-- **Lập trình Web**: ReactJS, Node.js, Python, JavaScript
-- **Thiết kế đồ họa**: Photoshop, Illustrator, UI/UX Design
-- **Marketing**: Digital Marketing, Social Media, SEO
-- **Kinh doanh**: Quản lý, Khởi nghiệp, Phân tích dữ liệu
-- **Ngoại ngữ**: Tiếng Anh, Tiếng Nhật, Tiếng Hàn
+## ✨ Features
 
-### 🔍 Tìm kiếm thông minh
-- Tìm kiếm theo tên khóa học với API integration
-- Lọc theo danh mục và cấp độ
-- Sắp xếp theo giá và đánh giá
-- Gợi ý tìm kiếm thông minh
+- **Responsive Modern UI**: Built with Tailwind CSS and Framer Motion for smooth animations
+- **Course Catalog**: Browse and filter courses by category, price, rating, and more
+- **Search Functionality**: Fast and efficient course search with real-time suggestions
+- **User Account Management**: Favorites and viewing history
+- **AI-Powered Assistant**: Chat widget for personalized learning recommendations
+- **Dark/Light Theme**: Full support for dark and light modes
+- **Course Details**: Comprehensive course information with instructor details and reviews
 
-### 📱 Giao diện responsive với animations
-- Tối ưu cho mobile, tablet và desktop
-- Dark mode / Light mode
-- Framer Motion animations và hiệu ứng smooth
-- SVG icons thay thế emoji
-- Loading skeletons cho UX tốt hơn
+## 🛠 Technologies
 
-### 🛌 Render Sleep Handling
-- **Auto wake-up**: Tự động đánh thức server khi sleeping
-- **Smart retry**: Retry với exponential backoff
-- **User feedback**: Hiển thị progress và GitHub link
-- **Fallback data**: Local data khi server không available
-- **Extended timeout**: 30s timeout cho Render cold start
+- **Frontend Framework**: React 18 with TypeScript
+- **Routing**: React Router v7
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Build Tool**: Vite
+- **AI Integration**: Google Generative AI & Cohere
+- **State Management**: React Context API
+- **HTTP Client**: Axios
+- **UI Components**: Headless UI
 
-### 🎯 SEO tối ưu
-- Meta tags đầy đủ
-- Open Graph và Twitter Cards
-- Structured data
-- Sitemap và robots.txt
+## 🚀 Getting Started
 
-## 🛠️ Công nghệ sử dụng
+### Prerequisites
 
-### Frontend
-- **React 19** - Framework chính
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **React Router** - Navigation
-- **React Helmet Async** - SEO meta tags
+- Node.js 18.x or higher
+- npm or yarn
 
-### Tools & Build
-- **Vite** - Build tool và dev server
-- **ESLint** - Code linting
+### Installation
 
-## 🚀 Cài đặt và chạy dự án
+Clone the repository and install dependencies:
 
-### Yêu cầu hệ thống
-- Node.js 18+ 
-- npm hoặc yarn
-
-### Cài đặt dependencies
 ```bash
+git clone https://github.com/Khangdora/antoree-fe.git
+cd antoree
 npm install
 ```
 
-### Chạy development server
+### Running the Development Server
+
 ```bash
 npm run dev
 ```
 
-### Build production
+The application will be available at `http://localhost:5173` by default.
+
+However, view the website directly at `https://antoree-demo.khangdora.io.vn`
+
+### Building for Production
+
 ```bash
 npm run build
 ```
 
-### Preview production build
+To preview the production build:
+
 ```bash
 npm run preview
 ```
 
-## 📁 Cấu trúc dự án
+## 📁 Project Structure
 
 ```
-src/
-├── components/
-│   ├── layout/
-│   │   ├── Header.tsx          # Header với navigation, search
-│   │   ├── Footer.tsx          # Footer với links và info
-│   │   └── Layout.tsx          # Layout wrapper
-│   └── ui/
-│       ├── CourseCard.tsx      # Component hiển thị khóa học
-│       ├── Loading.tsx         # Loading spinner
-│       └── EmptyState.tsx      # Empty state component
-├── pages/
-│   ├── HomePage.tsx            # Trang chủ
-│   ├── CoursesPage.tsx         # Danh sách khóa học
-│   ├── SearchPage.tsx          # Trang tìm kiếm
-│   ├── ContactPage.tsx         # Liên hệ
-│   └── ...
-├── contexts/
-│   └── ThemeContext.tsx        # Context cho dark/light mode
-├── data/
-│   └── data.json              # Dữ liệu khóa học
-└── index.css                  # Global styles
+antoree/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/             # Images and other assets
+│   ├── components/         # Reusable components
+│   │   ├── layout/         # Layout components (Header, Footer)
+│   │   ├── model/          # Model-related components
+│   │   └── ui/             # UI components
+│   ├── contexts/           # React contexts
+│   ├── data/               # Mock data JSON files
+│   ├── hooks/              # Custom React hooks
+│   ├── pages/              # Page components
+│   ├── services/           # API services
+│   ├── App.tsx             # Main application component
+│   └── main.tsx            # Entry point
+├── index.html              # HTML entry point
+├── package.json            # Dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+└── vite.config.ts          # Vite configuration
 ```
 
-## 🎨 Thiết kế và UX
+## 🧩 Key Components
 
-### Color Scheme
-- **Primary**: Blue (#3B82F6) - Tin cậy, chuyên nghiệp
-- **Secondary**: Purple (#8B5CF6) - Sáng tạo, học tập
-- **Accent**: Yellow (#F59E0B) - Nổi bật, khuyến khích
+### Layout Components
+- `Header`: Navigation, search, user menu, and categories dropdown
+- `Footer`: Site links, copyright, and additional information
+- `Layout`: Main layout wrapper with consistent structure
 
-### Components
-- **Course Cards**: Hiển thị thông tin khóa học với hover effects
-- **Search Bar**: Autocomplete với results preview
-- **Filters**: Category, price range, level, rating
-- **Navigation**: Sticky header với dropdowns
+### UI Components
+- `CourseCard`: Displays course information in a card format
+- `CategoryCard`: Shows category with icon and count
+- `AIChatWidget`: AI-powered chat assistant for course recommendations
+- `CourseDetailModal`: Displays detailed course information
 
-## 🔧 Customization
+### Pages
+- `HomePage`: Landing page with featured courses and categories
+- `FilterPage`: Advanced search and filtering for courses
+- `CoursePage`: Detailed view of a specific course
+- `FavoriteCoursesPage`: User's saved courses
+- `ViewHistoryPage`: User's course viewing history
 
-### Thêm khóa học mới
-Chỉnh sửa file `src/data/data.json` và thêm object course mới.
+## 🤖 AI Integration
 
-### Thêm danh mục mới
-Cập nhật icon mapping trong các component.
+Antoree features AI-powered components that enhance the learning experience:
 
-## 📊 Performance
+- **AI Chat Widget**: Provides course recommendations and answers questions
+- **AI Analysis**: Analyzes courses for personalized recommendations
+- **Smart Search**: Uses natural language processing for better search results
 
-### Lighthouse Scores
-- **Performance**: 95+
-- **Accessibility**: 98+
-- **Best Practices**: 100
-- **SEO**: 100
+## 📦 Deployment
 
-## 🌐 SEO Features
+The project is configured for deployment with Vercel. The `vercel.json` file includes the necessary configurations for a smooth deployment process.
 
-### Meta Tags
-- Title và description cho mỗi trang
-- Open Graph tags cho social sharing
-- Twitter Cards
-- Canonical URLs
+## 🤝 Contributing
 
-## 🔐 Accessibility
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### WCAG 2.1 AA Compliance
-- Keyboard navigation
-- Screen reader support
-- Color contrast ratios
-- Alt text for images
-
-## 📞 Support
-
-- Email: support@antoree.com
-- Phone: 1900 1234
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-**Antoree Academy** - Học thông minh, thành công bền vững! 🚀
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Built with ❤️ by Khang Dora
