@@ -1340,7 +1340,7 @@ const Header = () => {
               onMouseEnter={handleCartMouseEnter}
               onMouseLeave={handleCartMouseLeave}
             >
-              <button className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl hover:scale-110" onClick={handleCartClick}>
+              <button className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl hover:scale-110 cursor-pointer" onClick={handleCartClick}>
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -1467,7 +1467,7 @@ const Header = () => {
             {/* Mobile search button */}
             <button
               onClick={() => navigate("/filter")}
-              className="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-110"
+              className="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-110 cursor-pointer"
             >
               <svg
                 className="h-6 w-6"
@@ -1487,7 +1487,7 @@ const Header = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 hover:scale-110"
+              className="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 hover:scale-110 cursor-pointer"
             >
               <svg
                 className="h-6 w-6"

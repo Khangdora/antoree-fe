@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAIAssistant } from "../../hooks/useAIAssistant";
 import { Link } from "react-router-dom";
-import ReactDOMServer from "react-dom/server";
 
 type AIModel = "cohere" | "gemini";
 
@@ -106,45 +105,13 @@ export const AIChatWidget = () => {
 
         if (response.result) {
           const recommendations = JSON.parse(response.result);
-
-          const formattedResponse = (
-            <div className="space-y-4">
-              <p>Dựa trên yêu cầu của bạn, tôi đề xuất các khóa học sau:</p>
-              {recommendations.map((rec: any, index: number) => (
-                <div
-                  key={index}
-                  className="p-3 border border-purple-100 dark:border-purple-800 rounded-lg bg-purple-50/50 dark:bg-purple-900/10"
-                >
-                  <Link
-                    to={rec.link}
-                    className="font-medium text-blue-600 dark:text-blue-400 hover:underline block mb-1"
-                  >
-                    {index + 1}. {rec.course.title}
-                  </Link>
-                  <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
-                    <span>💰 {rec.course.price.toLocaleString("vi-VN")}đ</span>
-                    {rec.course.rating && (
-                      <span>⭐ {rec.course.rating}/5.0</span>
-                    )}
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    {rec.reason}
-                  </p>
-                </div>
-              ))}
-            </div>
-          );
-
-          // Chuyển JSX thành HTML string để lưu trong message
-          const htmlContent = ReactDOMServer.renderToString(formattedResponse);
-
+          
           setMessages((prev) => [
             ...prev,
             {
               type: "ai",
-              content: htmlContent,
+              content: JSON.stringify(recommendations),  // Store the raw data
               isRecommendation: true,
-              isHTML: true,
               model: selectedModel,
             },
           ]);
@@ -239,24 +206,24 @@ export const AIChatWidget = () => {
                     <h3 className="font-medium text-white">
                       Trợ lý AI Antoree
                     </h3>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 mt-2">
                       <select
                         value={selectedModel}
                         onChange={(e) =>
                           handleModelChange(e.target.value as AIModel)
                         }
-                        className="bg-white/20 text-black rounded px-2 py-0.5 text-xs focus:outline-none focus:ring-1 focus:ring-white/50"
+                        className="bg-white/20 text-white dark:text-white rounded px-2 py-0.5 text-xs focus:outline-none focus:ring-1 focus:ring-white/50 transition-colors"
                         disabled={isLoading}
                       >
-                        <option value="gemini">Gemini</option>
-                        <option value="cohere">Cohere</option>
+                        <option value="gemini" className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200">Gemini</option>
+                        <option value="cohere" className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200">Cohere</option>
                       </select>
                     </div>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors cursor-pointer"
                 >
                   <svg
                     className="w-6 h-6"
@@ -300,13 +267,34 @@ export const AIChatWidget = () => {
                         </span>
                       </div>
                     )}
-                    {msg.isHTML ? (
-                      <div
-                        className="whitespace-normal font-sans text-sm"
-                        dangerouslySetInnerHTML={{ __html: msg.content }}
-                      />
+                    {msg.isRecommendation ? (
+                      <div className="space-y-4">
+                        <p className="text-gray-700 dark:text-gray-300">Dựa trên yêu cầu của bạn, tôi đề xuất các khóa học sau:</p>
+                        {JSON.parse(msg.content).map((rec: any, idx: number) => (
+                          <div
+                            key={idx}
+                            className="p-3 border border-purple-100 dark:border-purple-800 rounded-lg bg-purple-50/50 dark:bg-purple-900/10"
+                          >
+                            <Link
+                              to={rec.link}
+                              className="font-medium text-blue-600 dark:text-blue-400 hover:underline block mb-1"
+                            >
+                              {idx + 1}. {rec.course.title}
+                            </Link>
+                            <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
+                              <span>💰 {rec.course.price.toLocaleString("vi-VN")}đ</span>
+                              {rec.course.rating && (
+                                <span>⭐ {rec.course.rating}/5.0</span>
+                              )}
+                            </div>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">
+                              {rec.reason}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     ) : (
-                      <pre className="whitespace-pre-wrap font-sans text-sm">
+                      <pre className="whitespace-pre-wrap font-sans text-sm text-gray-700 dark:text-gray-300">
                         {msg.content}
                       </pre>
                     )}
@@ -338,13 +326,13 @@ export const AIChatWidget = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Nhắn tin với trợ lý AI..."
-                  className="flex-1 px-4 py-2 rounded-lg border dark:border-gray-600 bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                  className="flex-1 px-4 py-2 rounded-lg border dark:border-gray-600 bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 text-gray-700 dark:text-gray-300"
                   disabled={isLoading}
                 />
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
                 >
                   Gửi
                 </button>

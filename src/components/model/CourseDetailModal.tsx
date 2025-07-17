@@ -47,7 +47,7 @@ const CourseDetailModal = ({ course, isOpen, onClose }: CourseDetailModalProps) 
                 {/* Close button */}
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2.5 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 group"
+                  className="absolute top-4 right-4 p-2.5 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 group z-1 cursor-pointer"
                 >
                   <svg
                     className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-white transition-colors"
@@ -203,7 +203,7 @@ const CourseDetailModal = ({ course, isOpen, onClose }: CourseDetailModalProps) 
                           )}
                         </div>
                         <Link
-                          to={`/course/${course.id}`}
+                          to={`/course/${course.slug}`}
                           className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 active:bg-blue-800 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                         >
                           <span className="font-medium">Đăng ký ngay</span>

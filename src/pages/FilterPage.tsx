@@ -49,6 +49,13 @@ const FilterPage = () => {
     limit: 12,
   });
 
+  const [pagination, setPagination] = useState({
+    current_page: 1,
+    total_pages: 1,
+    total_courses: 0,
+    per_page: 12,
+  });
+
   // Get unique categories from courses data with count
   const getCategories = () => {
     // Use dataProcessor to get categories with course counts
@@ -174,34 +181,46 @@ const FilterPage = () => {
 
   useEffect(() => {
     const handleHeaderSearch = (e: CustomEvent) => {
-      setFilterSettings(prev => ({
+      setFilterSettings((prev) => ({
         ...prev,
         searchQuery: e.detail.query,
-        category: null // Reset category when searching
+        category: null, // Reset category when searching
       }));
       fetchFilteredCourses();
     };
 
-    window.addEventListener('header-search-updated', handleHeaderSearch as EventListener);
+    window.addEventListener(
+      "header-search-updated",
+      handleHeaderSearch as EventListener
+    );
     return () => {
-      window.removeEventListener('header-search-updated', handleHeaderSearch as EventListener);
+      window.removeEventListener(
+        "header-search-updated",
+        handleHeaderSearch as EventListener
+      );
     };
   }, []);
 
   useEffect(() => {
     const handleHeaderCategorySelect = (e: CustomEvent) => {
-      setFilterSettings(prev => ({
+      setFilterSettings((prev) => ({
         ...prev,
         category: e.detail.categoryId,
-        searchQuery: '' // Reset search when selecting category
+        searchQuery: "", // Reset search when selecting category
       }));
       setSelectedCategory(e.detail.categoryId);
       fetchFilteredCourses();
     };
 
-    window.addEventListener('header-category-updated', handleHeaderCategorySelect as EventListener);
+    window.addEventListener(
+      "header-category-updated",
+      handleHeaderCategorySelect as EventListener
+    );
     return () => {
-      window.removeEventListener('header-category-updated', handleHeaderCategorySelect as EventListener);
+      window.removeEventListener(
+        "header-category-updated",
+        handleHeaderCategorySelect as EventListener
+      );
     };
   }, []);
 
@@ -307,12 +326,37 @@ const FilterPage = () => {
       });
 
       setCourses(response.courses);
+
+      if (response.pagination) {
+        setPagination(response.pagination);
+      }
     } catch (error) {
       console.error("Failed to fetch courses:", error);
       setCourses([]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handlePageChange = (page: number) => {
+    setFilterSettings((prev) => ({
+      ...prev,
+      page,
+    }));
+
+    // Cập nhật URL và load lại dữ liệu
+    const params = new URLSearchParams(location.search);
+    params.set("page", page.toString());
+    navigate(
+      {
+        pathname: "/filter",
+        search: params.toString(),
+      },
+      { replace: true }
+    );
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    fetchFilteredCourses();
   };
 
   const handleMinPriceChange = (
@@ -358,9 +402,7 @@ const FilterPage = () => {
     applyFilters();
   };
 
-  const handleMaxPriceChange = (
-    moveEvent: MouseEvent
-  ) => {
+  const handleMaxPriceChange = (moveEvent: MouseEvent) => {
     if (!sliderRef.current) return;
 
     const rect = sliderRef.current.getBoundingClientRect();
@@ -393,7 +435,6 @@ const FilterPage = () => {
         {/* Main Content with Sidebar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
-
             {/* Main content area */}
             <div className="w-full">
               {/* Search Input with Filters */}
@@ -713,8 +754,28 @@ const FilterPage = () => {
               </div>
 
               {/* Filter Tabs */}
-              <div className="flex flex-wrap gap-4 mb-8">
-                Danh sách sản phẩm:
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center space-x-3">
+                  <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+                    Danh sách khóa học
+                  </h2>
+                  {!isLoading && (
+                    <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
+                      {pagination.total_courses} khóa học{pagination.total_pages > 1 ? `, trang ${pagination.current_page}/${pagination.total_pages}` : ''}
+                    </span>
+                  )}
+                </div>
+
+                {filterSettings.category && (
+                  <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                    <span className="mr-2">Danh mục:</span>
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-lg font-medium">
+                      {mainCategories.find(
+                        (c) => c.id === filterSettings.category
+                      )?.name || "Khóa học"}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Courses Grid with animations */}
@@ -744,6 +805,107 @@ const FilterPage = () => {
                       </motion.div>
                     ))}
               </div>
+
+              {/* Pagination Controls */}
+              {!isLoading && pagination.total_pages > 1 && (
+                <div className="flex justify-center items-center mt-12 space-x-2">
+                  <button
+                    onClick={() =>
+                      handlePageChange(Math.max(1, pagination.current_page - 1))
+                    }
+                    disabled={pagination.current_page <= 1}
+                    className={`p-2 rounded-lg ${
+                      pagination.current_page <= 1
+                        ? "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
+                    } border border-gray-200 dark:border-gray-700`}
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {[...Array(pagination.total_pages)].map((_, idx) => {
+                    const pageNumber = idx + 1;
+                    // Hiển thị tối đa 5 nút số trang, ưu tiên trang hiện tại và lân cận
+                    if (
+                      pageNumber === 1 ||
+                      pageNumber === pagination.total_pages ||
+                      (pageNumber >= pagination.current_page - 1 &&
+                        pageNumber <= pagination.current_page + 1) ||
+                      (pagination.current_page <= 3 && pageNumber <= 5) ||
+                      (pagination.current_page >= pagination.total_pages - 2 &&
+                        pageNumber >= pagination.total_pages - 4)
+                    ) {
+                      return (
+                        <button
+                          key={pageNumber}
+                          onClick={() => handlePageChange(pageNumber)}
+                          className={`px-4 py-2 rounded-lg ${
+                            pageNumber === pagination.current_page
+                              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
+                          } border border-gray-200 dark:border-gray-700`}
+                        >
+                          {pageNumber}
+                        </button>
+                      );
+                    } else if (
+                      (pageNumber === 2 && pagination.current_page > 4) ||
+                      (pageNumber === pagination.total_pages - 1 &&
+                        pagination.current_page < pagination.total_pages - 3)
+                    ) {
+                      return (
+                        <span key={pageNumber} className="px-3 py-2">
+                          ...
+                        </span>
+                      );
+                    }
+                    return null;
+                  })}
+
+                  <button
+                    onClick={() =>
+                      handlePageChange(
+                        Math.min(
+                          pagination.total_pages,
+                          pagination.current_page + 1
+                        )
+                      )
+                    }
+                    disabled={pagination.current_page >= pagination.total_pages}
+                    className={`p-2 rounded-lg ${
+                      pagination.current_page >= pagination.total_pages
+                        ? "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
+                    } border border-gray-200 dark:border-gray-700`}
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
 
               {/* Empty State - update for courses */}
               {!isLoading && courses.length === 0 && (
